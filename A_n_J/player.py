@@ -1,6 +1,7 @@
 
 import A_n_J.PiecePositions
 
+
 class ExamplePlayer:
     def __init__(self, colour):
         """
@@ -15,8 +16,8 @@ class ExamplePlayer:
         """
         # TODO: Set up state representation.
         
-        player_colour = colour
-        board_state = A_n_J.PiecePositions()
+        self.player_colour = colour
+        self.board_state = A_n_J.PiecePositions()
 
 
     def action(self):
@@ -33,6 +34,8 @@ class ExamplePlayer:
         # TODO: Decide what action to take.
         
         
+        # JUMP, MOVE, PASS, EXIT 
+        
         return ("PASS", None)
 
 
@@ -48,10 +51,25 @@ class ExamplePlayer:
         "green", or "blue" correspondingly.
 
         The parameter action is a representation of the most recent action (or 
-        pass) conforming to the above in- structions for representing actions.
+        pass) conforming to the above in-structions for representing actions.
 
         You may assume that action will always correspond to an allowed action 
         (or pass) for the player colour (your method does not need to validate 
         the action/pass against the game rules).
         """
         # TODO: Update state representation in response to action.
+        self.board_state = self.board_state.update_piece_positions(colour,action)
+
+    def get_utility(self):
+        
+        num_player_pieces = len(self.board_state[self.player_colour])
+        num_opponent_pieces = 0
+        
+        for player in self.board_state:
+            num_opponent_pieces += len(self.board_state[player])
+            
+        num_opponent_pieces = num_opponent_pieces - num_player_pieces
+        
+        utility = num_opponent_pieces + num_player_pieces
+        
+        return utility

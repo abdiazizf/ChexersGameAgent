@@ -4,7 +4,7 @@ Created on Apr 28, 2019
 @author: Jordan
 '''
 
-class GameState(object):
+class PiecePositions(object):
     '''
     Representation of the current board state in a game of Chexers
     '''
@@ -31,6 +31,9 @@ class GameState(object):
         self.piece_vectors = self.construct_piece_vectors(self)
         
     def __eq__(self, other):
+        
+            
+        
         return
     def __hash__(self):
         return
