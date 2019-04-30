@@ -20,6 +20,9 @@ class Action(object):
             return False
         else: 
             return True
+        
+    def format_output(self):
+        return (self.action_type,(self.origin,self.destination))
        
 
     def __init__(self, origin, direction, action_type):

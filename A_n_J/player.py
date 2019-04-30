@@ -1,5 +1,6 @@
 
 import A_n_J.PiecePositions
+import A_n_J.PossibleActions
 
 
 class ExamplePlayer:
@@ -18,6 +19,8 @@ class ExamplePlayer:
         
         self.player_colour = colour
         self.board_state = A_n_J.PiecePositions()
+        self.possible_actions = A_n_J.PossibleActions(self.player_colour)
+        self.pieces_exited = 0
 
 
     def action(self):
@@ -33,8 +36,9 @@ class ExamplePlayer:
         """
         # TODO: Decide what action to take.
         
-        
         # JUMP, MOVE, PASS, EXIT 
+
+        #actionTaken = action.format_output()
         
         return ("PASS", None)
 
@@ -51,7 +55,7 @@ class ExamplePlayer:
         "green", or "blue" correspondingly.
 
         The parameter action is a representation of the most recent action (or 
-        pass) conforming to the above in-structions for representing actions.
+        pass) conforming to the above instructions for representing actions.
 
         You may assume that action will always correspond to an allowed action 
         (or pass) for the player colour (your method does not need to validate 
@@ -73,3 +77,21 @@ class ExamplePlayer:
         utility = num_opponent_pieces + num_player_pieces
         
         return utility
+    
+
+    def minimax(self):
+        self.possible_actions.generate_actions(self.player_colour,self.board_state)
+        best_move = self.possible_actions.possible_actions
+        best_score = 0
+        
+        for move in self.possible_actions.actions:
+            new_state = self.board_state.update_piece_positions(self.player_colour,move)
+            score = min_play(new_state)
+            if score > best_score:
+                best_move = move
+                best_score = score
+                
+        return best_move
+            
+        
+        

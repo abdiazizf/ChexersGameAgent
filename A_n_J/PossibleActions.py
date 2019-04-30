@@ -18,7 +18,7 @@ class PossibleActions(object):
     # off board co-ordinates for generating valid exit moves
     exit_hexes = {'red': [(4, -3),(4,-2),(4,-1)] , 'blue':[(-3,-1),(-2,-2),(-1,-3)] , 'green' :[(-3,4),(-2,4),(-1,4)]}
 
-    possible_actions = []
+    actions = []
     
     def generate_actions(self,player_colour,board_state):
         '''
@@ -36,7 +36,7 @@ class PossibleActions(object):
     def add_action(self,piece,direction,move,board_state):
         tempAction = A_n_J.Action(piece,direction,move)
         if(self.valid_action(tempAction,board_state,move,direction) == True):
-            self.possible_actions.append(tempAction)
+            self.actions.append(tempAction)
           
               
     def valid_action(self,action,board_state,move,direction):

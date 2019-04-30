@@ -20,8 +20,8 @@ class PiecePositions(object):
         return piece_vectors
     
     def update_piece_positions(self,colour,action):
-        origin = action[0]
-        new_position = action[1]
+        origin = action.origin
+        new_position = action.destination
         self.piece_vectors[colour][origin] = new_position
 
     def __init__(self, params):
