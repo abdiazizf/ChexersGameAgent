@@ -6,7 +6,8 @@ Created on May 7, 2019
 
 class Evaluater(object):
     '''
-    classdocs
+    This class handles the evaluation of a board state with regards to the 
+    utility for a given player colour
     '''
     def __init__(self, params):
         '''
@@ -18,6 +19,8 @@ class Evaluater(object):
     in regards to player colour 
     '''
     def get_utility(self,state,colour):
+        
+        goal = state.actions.get_exit_hexes()
         
         num_player_pieces = len(self.piece_vectors[self.player_colour])
         num_opponent_pieces = 0
@@ -64,7 +67,10 @@ class Evaluater(object):
             total += min_dist
         return total
             
-            
+    '''
+    Takes a board state and piece tuple as input and returns the nearest exit 
+    hex for the piece
+    '''
     def nearest_goal(self,state,piece):
         exits = state.actions.get_exit_hexes()
         min_dist = self.hex_distance(piece, exits[0])
@@ -76,3 +82,13 @@ class Evaluater(object):
                 min_dist = temp_dist
                  
         return min_hex
+    
+    '''
+    Returns true if the current game state is a terminal state. ie, the game 
+    is over. 
+    '''
+    def is_gameover(self):
+        for colour in self.piece_vectors:
+            if len(self.piece_vectors[colour]) == 0:
+                return True
+            else: return False

@@ -10,6 +10,9 @@ class PossibleActions(object):
     '''
     Holds a list of possible actions for the current board state
     Used in calculation of successor nodes 
+    
+    
+    
     '''
     #possible axial directions
     axial_directions = [(1, 0), (1, -1), (0, -1), (-1, 0), (-1, 1), (0, 1)]
