@@ -16,8 +16,8 @@ class ExamplePlayer:
         """
         # TODO: Set up state representation.
         
-        
-        self.board_state = A_n_J.BoardState(colour)
+        initial_pieces = self.construct_piece_vectors()
+        self.board_state = A_n_J.BoardState(colour,initial_pieces)
         self.pieces_exited = 0
 
 
@@ -63,6 +63,17 @@ class ExamplePlayer:
         self.board_state = self.board_state.update_piece_positions(colour,action)
 
     
-            
+    '''
+    Returns a dictionary of vectors containing the initial positions of the 
+    pieces for each player on the board. Used during setup of a board_state
+    '''
+    def construct_piece_vectors(self):
+        
+        piece_vectors = {}
+        piece_vectors["red"] = [(-3,0),(-3,1),(-3,2),(-3,3)]
+        piece_vectors["green"] = [(0,-3),(1,-3),(2,-3),(3,-3)]
+        piece_vectors["blue"] =  [(3,0),(2,1),(1,2),(0,3)]
+        
+        return piece_vectors
         
         
