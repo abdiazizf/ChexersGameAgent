@@ -3,11 +3,23 @@ Created on Apr 28, 2019
 
 @author: Jordan
 '''
+import A_n_J.PossibleActions
+import A_n_J.Evaluater
 
-class PiecePositions(object):
+class BoardState(object):
     '''
     Representation of the current board state in a game of Chexers
     '''
+    
+    def __init__(self, player_colour):
+        '''
+        Constructor
+        '''
+        self.player_colour = player_colour
+        self.piece_vectors = self.construct_piece_vectors(self)
+        self.actions = A_n_J.PossibleActions(self)
+        self.actions.generate_actions(player_colour,self)
+        self.evaluater = A_n_J.Evaluater()
     
     def construct_piece_vectors(self):
         
@@ -23,17 +35,15 @@ class PiecePositions(object):
         origin = action.origin
         new_position = action.destination
         self.piece_vectors[colour][origin] = new_position
+        
+    def is_gameover(self):
+        for colour in self.piece_vectors:
+            if len(self.piece_vectors[colour]) == 0:
+                return True
+            else: return False
 
-    def __init__(self, params):
-        '''
-        Constructor
-        '''
-        self.piece_vectors = self.construct_piece_vectors(self)
         
     def __eq__(self, other):
-        
-            
-        
         return
     def __hash__(self):
         return

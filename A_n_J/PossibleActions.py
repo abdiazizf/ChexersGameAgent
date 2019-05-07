@@ -20,11 +20,12 @@ class PossibleActions(object):
 
     actions = []
     
+    '''
+    Input: current board_state and player colour
+    Output: List of valid actions for a given player
+    '''
     def generate_actions(self,player_colour,board_state):
-        '''
-        Input: current board_state and player colour
-        Output: List of valid actions for a given player
-        '''
+
         for piece in board_state[player_colour]:
             for direction in self.axial_directions:
                 self.add_action(piece,direction,"MOVE",board_state)
@@ -32,20 +33,24 @@ class PossibleActions(object):
             for jump in self.axial_jump:
                 self.add_action(piece,jump,"JUMP",board_state)
                 
-    
+    '''
+    Takes a piece, a direction and a move type as input, creates an action
+    and asserts its validity before adding it to the list of possible actions for 
+    the current state
+    '''
     def add_action(self,piece,direction,move,board_state):
         tempAction = A_n_J.Action(piece,direction,move)
         if(self.valid_action(tempAction,board_state,move,direction) == True):
             self.actions.append(tempAction)
           
-              
+    '''
+    Returns true if an action would end a piece on the board
+    OR returns true if the conditions to jump are met and end would be 
+    on the board
+    OR returns true if a move would exit the board and is not a jump
+    '''    
     def valid_action(self,action,board_state,move,direction):
-        '''
-        Returns true if an action would end a piece on the board
-        OR returns true if the conditions to jump are met and end would be 
-        on the board
-        OR returns true if a move would exit the board and is not a jump
-        '''
+
         if(move == "EXIT"):
             if(action.destination not in self.exit_hexes[self.player_colour]):
                 return False
@@ -58,9 +63,14 @@ class PossibleActions(object):
             return False
         return True
 
-    def __init__(self, colour):
+    '''
+    Returns vector of exit hexes for a colour
+    '''
+    def get_exit_hexes(self,colour):
+        return self.exit_hexes[colour]
+
+    def __init__(self):
         '''
         Constructor
         '''
-        self.player_colour = colour
         
