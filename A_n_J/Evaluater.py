@@ -60,6 +60,19 @@ class Evaluater(object):
     def sum_distance_to_goal(self,piece_vector,goal):
         total = 0
         for piece in piece_vector:
-            total += self.hex_distance(piece,goal)
+            min_dist = self.hex_distance(piece, self.nearest_goal(piece, goal))
+            total += min_dist
         return total
             
+            
+    def nearest_goal(self,state,piece):
+        exits = state.actions.get_exit_hexes()
+        min_dist = self.hex_distance(piece, exits[0])
+        min_hex = exits[0]
+        for hexes in exits:
+            temp_dist = self.hex_distance(piece,hexes)
+            if(temp_dist < min_dist):
+                min_hex = hexes
+                min_dist = temp_dist
+                 
+        return min_hex
