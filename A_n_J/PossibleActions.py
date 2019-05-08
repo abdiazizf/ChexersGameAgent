@@ -4,7 +4,7 @@ Created on Apr 30, 2019
 @author: Jordan
 '''
 
-import A_n_J.Action
+from A_n_J.Action import Action
 
 class PossibleActions(object):
     '''
@@ -29,7 +29,7 @@ class PossibleActions(object):
     '''
     def generate_actions(self,player_colour,board_state):
 
-        for piece in board_state[player_colour]:
+        for piece in board_state.piece_vectors[player_colour]:
             for direction in self.axial_directions:
                 self.add_action(piece,direction,"MOVE",board_state)
                 self.add_action(piece, direction, "EXIT", board_state)
@@ -42,7 +42,7 @@ class PossibleActions(object):
     the current state
     '''
     def add_action(self,piece,direction,move,board_state):
-        tempAction = A_n_J.Action(piece,direction,move)
+        tempAction = Action(piece,direction,move)
         if(self.valid_action(tempAction,board_state,move,direction) == True):
             self.actions.append(tempAction)
           
@@ -55,14 +55,15 @@ class PossibleActions(object):
     def valid_action(self,action,board_state,move,direction):
 
         if(move == "EXIT"):
-            if(action.destination not in self.exit_hexes[self.player_colour]):
+            if(action.destination not in self.exit_hexes[board_state.player_colour]):
                 return False
         if(move == "JUMP"):
-            if(action.destination-direction/2) not in board_state:
+            temp = (action.destination[0] - (direction[0]/2), action.destination[1] - (direction[1]/2))
+            if temp not in board_state.piece_vectors:
                 return False    
         if(action.on_board() != True):
             return False
-        if(action.destination in board_state):
+        if(action.destination in board_state.piece_vectors):
             return False
         return True
 

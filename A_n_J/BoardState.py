@@ -3,8 +3,8 @@ Created on Apr 28, 2019
 
 @author: Jordan
 '''
-import A_n_J.PossibleActions
-import A_n_J.Evaluater
+from A_n_J.PossibleActions import PossibleActions
+from A_n_J.Evaluater import Evaluater
 import copy
 
 class BoardState(object):
@@ -24,9 +24,9 @@ class BoardState(object):
 
         self.player_colour = player_colour
         self.piece_vectors = piece_vector
-        self.actions = A_n_J.PossibleActions(self)
+        self.actions = PossibleActions()
         self.actions.generate_actions(player_colour,self)
-        self.evaluater = A_n_J.Evaluater()
+        self.evaluater = Evaluater()
     
     '''
     Takes an action and player colour as input, returns a new piece vector that
@@ -44,7 +44,7 @@ class BoardState(object):
     def generate_successor(self,action):
         
         new_piece_vector = self.update_piece_positions(self.player_colour, action)
-        new_state = A_n_J.BoardState(self.player_colour,new_piece_vector)
+        new_state = BoardState(self.player_colour,new_piece_vector)
         
         return new_state
         

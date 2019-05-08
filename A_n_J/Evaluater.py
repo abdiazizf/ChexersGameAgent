@@ -9,7 +9,7 @@ class Evaluater(object):
     This class handles the evaluation of a board state with regards to the 
     utility for a given player colour
     '''
-    def __init__(self, params):
+    def __init__(self):
         '''
         Constructor
         '''
@@ -90,5 +90,5 @@ class Evaluater(object):
     def is_gameover(self):
         for colour in self.piece_vectors:
             if len(self.piece_vectors[colour]) == 0:
-                return True
-            else: return False
+                return colour
+        

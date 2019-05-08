@@ -1,8 +1,9 @@
 
-import A_n_J.BoardState
+from A_n_J.BoardState import BoardState
+from A_n_J.MonteCarlo import MonteCarlo
 
 
-class ExamplePlayer:
+class Player:
     def __init__(self, colour):
         """
         This method is called once at the beginning of the game to initialise
@@ -17,9 +18,9 @@ class ExamplePlayer:
         # TODO: Set up state representation.
         
         initial_pieces = self.construct_piece_vectors()
-        self.board_state = A_n_J.BoardState(colour,initial_pieces)
+        self.board_state = BoardState(colour,initial_pieces)
         self.pieces_exited = 0
-
+        self.mcAI = MonteCarlo(self.board_state)
 
     def action(self):
         """
@@ -35,8 +36,9 @@ class ExamplePlayer:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-
-        #actionTaken = action.format_output()
+        
+        move_to_take = self.mcAI.get_play()
+        print(move_to_take)
         
         return ("PASS", None)
 

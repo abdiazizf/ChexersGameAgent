@@ -18,7 +18,7 @@ player package/class specifications (positional arguments):
   
   If you want to play games with another player class from another package (e.g.
   while you develop your player), you can use any absolute module name (as used
-  with import statements, e.g. 'A_n_J.player2') or relative path (to a
+  with import statements, e.g. 'A_n_J.Player2') or relative path (to a
   file or directory containing the Python module, e.g. 'A_n_J/player3'
   or 'A_n_J/players/player4.py').
   
@@ -97,7 +97,7 @@ your top-level package (i.e. 'A_n_J').
 
 If you want to play games with another player class from another package (e.g.
 while you develop your player), you can use any absolute module name (as used
-with import statements, e.g. 'A_n_J.player2') or relative path (to a
+with import statements, e.g. 'A_n_J.Player2') or relative path (to a
 file or directory containing the Python module, e.g. 'A_n_J/player3'
 or 'A_n_J/players/player4.py').
 
