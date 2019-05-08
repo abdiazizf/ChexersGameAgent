@@ -73,6 +73,9 @@ class PossibleActions(object):
     def get_exit_hexes(self,colour):
         return self.exit_hexes[colour]
 
+    def get_actions(self):
+        return self.actions
+
     def __init__(self):
         '''
         Constructor

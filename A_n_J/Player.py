@@ -1,6 +1,7 @@
 
 from A_n_J.BoardState import BoardState
 from A_n_J.MonteCarlo import MonteCarlo
+from A_n_J.MCNode import MCNode
 
 
 class Player:
@@ -18,9 +19,12 @@ class Player:
         # TODO: Set up state representation.
         
         initial_pieces = self.construct_piece_vectors()
-        self.board_state = BoardState(colour,initial_pieces)
+        score = self.construct_score_dict()
+        self.board_state = BoardState(colour,initial_pieces,score)
         self.pieces_exited = 0
-        self.mcAI = MonteCarlo(self.board_state)
+        
+        self.root_node = MCNode(self.board_state)
+        self.mcAI = MonteCarlo(self.root_node)
 
     def action(self):
         """
@@ -37,9 +41,8 @@ class Player:
         
         # JUMP, MOVE, PASS, EXIT 
         
-        move_to_take = self.mcAI.get_play()
-        print(move_to_take)
-        
+        best_move = self.mcAI.best_action(10)
+        print(best_move)
         return ("PASS", None)
 
 
@@ -78,4 +81,12 @@ class Player:
         
         return piece_vectors
         
+    def construct_score_dict(self):
+        
+        score = {}
+        score["red"] = 0
+        score["green"] = 0
+        score["blue"] =  0
+        
+        return score
         
