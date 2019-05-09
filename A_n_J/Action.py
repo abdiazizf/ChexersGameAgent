@@ -18,6 +18,8 @@ class Action(object):
     Checks to see if a move will end on a valid hex on the game_board
     '''
     def on_board(self):
+        if(self.hex_distance(self.destination, (0,0) ) > 3):
+            return False
         if (self.destination[0] < -3) or (self.destination[0] > 3):
             return False
         if (self.destination[1] < -3) or (self.destination[1] > 3):
@@ -32,14 +34,35 @@ class Action(object):
          (  JUMP, ( (1,0) , (3,0) )  )
     '''
     def format_output(self):
-        return (self.action_type,(self.origin,self.destination))
+        return (self.action_type, ((self.origin), (self.destination)))
        
-
+    
     def __init__(self, origin, direction, action_type):
         '''
         Constructor
         '''
         self.origin = origin
-        self.destination = origin+direction
+        self.destination = (origin[0] + direction[0],origin[1] + direction[1])
         self.action_type = action_type
+        
+    '''
+    Returns true if both numbers share the same sign, ie + or - 
+    '''
+    def same_sign(self, q , r) :
+        return (q < 0 and r < 0)or (q>=0 and r>= 0)
+    
+    '''
+    Takes two tuples as input and returns the distance between them in 
+    number of hexes
+    '''
+    def hex_distance(self, origin, goal):
+
+        distance_x = goal[0] - origin[0]
+        distance_y = goal[1] - origin[1]
+        if self.same_sign(distance_x, distance_y):
+            return abs(distance_x + distance_y)
+        else:
+            return max(abs(distance_x), abs(distance_y))
+    
+        return
         

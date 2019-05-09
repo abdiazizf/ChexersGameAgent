@@ -20,32 +20,43 @@ class BoardState(object):
     '''
     
     def __init__(self, player_colour,piece_vector,score):
-
         self.player_colour = player_colour
         self.piece_vectors = piece_vector
-        self.legal_moves = PossibleActions()
+        self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self)
         self.score = score
+        
     '''
     Takes an action and player colour as input, returns a new piece vector that
     represents the move taken by that player
     '''
     def update_piece_positions(self,colour,action):
+        
         new_vector = copy.deepcopy(self.piece_vectors)
         if(action.action_type == "EXIT"):
+            print("EXIT MOVE TAKEN")
             self.score[colour] +=1
             origin = action.origin
             new_vector[colour].remove(origin)
         else:
-            origin = action.origin
+            new_vector[colour].remove(action.origin)
             new_position = action.destination
-            new_vector[colour][origin] = new_position
+            new_vector[colour].append(new_position) 
         return new_vector
+        
+    def player_turn_order(self):
+        if (self.player_colour == "red"):
+            return 'green'
+        elif( self.player_colour == 'green'):
+            return 'blue'
+        else:
+            return 'red'
         
     def generate_successor(self,action):
         
         new_piece_vector = self.update_piece_positions(self.player_colour, action)
-        new_state = BoardState(self.player_colour,new_piece_vector,self.score)
+        next_player = self.player_turn_order()
+        new_state = BoardState(next_player,new_piece_vector,self.score)
         
         return new_state
     

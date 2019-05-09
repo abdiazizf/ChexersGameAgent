@@ -20,8 +20,6 @@ class PossibleActions(object):
     axial_jump = [(2, 0), (2, -2), (0, -2), (-2, 0), (-2, 2), (0, 2)]
     # off board co-ordinates for generating valid exit moves
     exit_hexes = {'red': [(4, -3),(4,-2),(4,-1)] , 'blue':[(-3,-1),(-2,-2),(-1,-3)] , 'green' :[(-3,4),(-2,4),(-1,4)]}
-
-    actions = []
     
     '''
     Input: current board_state and player colour
@@ -51,9 +49,10 @@ class PossibleActions(object):
     OR returns true if the conditions to jump are met and end would be 
     on the board
     OR returns true if a move would exit the board and is not a jump
+    OR returns false if space is occupied
     '''    
     def valid_action(self,action,board_state,move,direction):
-
+        
         if(move == "EXIT"):
             if(action.destination not in self.exit_hexes[board_state.player_colour]):
                 return False
@@ -63,9 +62,21 @@ class PossibleActions(object):
                 return False    
         if(action.on_board() != True):
             return False
-        if(action.destination in board_state.piece_vectors):
+        if(action.destination in board_state.piece_vectors[board_state.player_colour]):
             return False
+        '''
+        if(move == "MOVE"):
+            temp = (action.destination[0] - (direction[0]), action.destination[1] - (direction[1]))
+            print(temp)
+            if temp in board_state.piece_vectors:
+                return False
+        '''
         return True
+    
+    def print_moves(self):
+        for move in self.actions:
+            print(move.format_output())
+    
 
     '''
     Returns vector of exit hexes for a colour
@@ -76,8 +87,10 @@ class PossibleActions(object):
     def get_actions(self):
         return self.actions
 
-    def __init__(self):
+    def __init__(self,board_state):
         '''
         Constructor
         '''
+        self.actions = []
+
         

@@ -19,13 +19,16 @@ class MonteCarlo(object):
         for _ in range(0, num_simulations):
             v = self.tree_policy()
             reward = v.rollout()
+            print("reward")
             v.backpropogate(reward)
+            print("BP")
         
         return self.initial_state.best_child()
     
     def tree_policy(self):
         current_state = self.initial_state
         while not current_state.is_terminal_state():
+            print("EXPANDING STATE ")
             if not current_state.fully_expanded():
                 return current_state.expand()
             else: 
