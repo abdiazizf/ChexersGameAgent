@@ -15,14 +15,12 @@ class BoardState(object):
     piece_vectors: a vector of all piece positions on a board
     actions: Instance of PossibleActions class containing the valid moves for 
              a given board state.
-    evaluater: An instance of the Evaluater class used to evaluate the utility
-               of a board state for the current player
     
     '''
     
     def __init__(self, player_colour,piece_vector,score):
         self.player_colour = player_colour
-        self.piece_vectors = piece_vector
+        self.piece_vectors = deepcopy(piece_vector)
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self)
         self.score = score
@@ -33,19 +31,52 @@ class BoardState(object):
     represents the move taken by that player
     '''
     def update_piece_positions(self,colour,action):
+        new_vector = {}
         
-        new_vector = copy.deepcopy(self.piece_vectors)
+        red = deepcopy(self.piece_vectors['red'])
+        blue = deepcopy(self.piece_vectors['blue'])
+        green = deepcopy(self.piece_vectors['green'])
+        
+        new_vector['red'] = red
+        new_vector['green'] = green
+        new_vector['blue'] = blue
+        
+        if(action.action_type == "PASS"):
+            self.score[self.player_colour]["turns"] += 1
+            return new_vector
+        
+        origin = action.origin
+        destination = action.destination
         if(action.action_type == "EXIT"):
-            print("EXIT MOVE TAKEN")
             self.score[colour]["exits"] +=1
-            origin = action.origin
             new_vector[colour].remove(origin)
+        elif(action.action_type == "JUMP"):
+            neighbour = action.get_neighbour_space()
+            pc = None
+            piece_taken = False
+            for player in new_vector:
+                for piece in new_vector[player]:
+                    if piece == neighbour:
+                        pc = player
+                        piece_taken = True
+            new_vector[colour].remove(origin)
+            new_vector[colour].append(destination)
+            if piece_taken == True:
+                new_vector[pc].remove(neighbour)
+                new_vector[colour].append(neighbour)
         else:
-            new_vector[colour].remove(action.origin)
-            new_position = action.destination
-            new_vector[colour].append(new_position) 
+            new_vector[colour].remove(origin)
+            new_vector[colour].append(destination)
         self.score[self.player_colour]["turns"] += 1
+        #print(new_vector,action.format_output(),colour)
         return new_vector
+        
+    def update_board_state(self,action,colour,score):
+        new_piece_vector = self.update_piece_positions(colour, action)
+        next_player = self.player_turn_order()
+        new_score = deepcopy(score)
+
+        return BoardState(next_player,new_piece_vector,new_score)
         
     def player_turn_order(self):
         if (self.player_colour == "red"):
@@ -54,7 +85,7 @@ class BoardState(object):
             return 'blue'
         else:
             return 'red'
-        
+    
     def generate_successor(self,action):
         
         #self.generated_by = action
@@ -63,13 +94,6 @@ class BoardState(object):
         new_state = BoardState(next_player,new_piece_vector,self.score)
         
         return new_state
-    
-    def update_board_state(self,action,colour,score):
-        new_piece_vector = self.update_piece_positions(colour, action)
-        next_player = self.player_turn_order()
-        new_score = deepcopy(score)
-
-        return BoardState(next_player,new_piece_vector,new_score)
     
     def is_terminal_state(self):
         max_moves = 0

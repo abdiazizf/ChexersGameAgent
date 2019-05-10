@@ -41,7 +41,7 @@ class PossibleActions(object):
     '''
     def add_action(self,piece,direction,move,board_state):
         tempAction = Action(piece,direction,move)
-        if(self.valid_action(tempAction,board_state,move,direction) == True):
+        if(self.valid_action(tempAction,board_state,move) == True):
             self.actions.append(tempAction)
           
     '''
@@ -51,19 +51,18 @@ class PossibleActions(object):
     OR returns true if a move would exit the board and is not a jump
     OR returns false if space is occupied
     '''    
-    def valid_action(self,action,board_state,move,direction):
+    def valid_action(self,action,board_state,move):
         
         if(move == "EXIT"):
             if(action.destination not in self.exit_hexes[board_state.player_colour]):
                 return False
-        if(move == "JUMP"):
-            temp = (action.destination[0] - (direction[0]/2), action.destination[1] - (direction[1]/2))
-            if temp not in board_state.piece_vectors:
-                return False    
         if(action.on_board() != True):
             return False
         for player in board_state.piece_vectors:
             if(action.destination in board_state.piece_vectors[player]):
+                return False
+        if(move == "JUMP"):
+            if not self.has_neighbour_in_jump_direction(action, board_state):
                 return False
         return True
     
@@ -71,7 +70,14 @@ class PossibleActions(object):
         for move in self.actions:
             print(move.format_output())
     
-
+    def has_neighbour_in_jump_direction(self,action,board_state):
+        neighbouring_space = action.get_neighbour_space()
+        for player in board_state.piece_vectors:
+            if neighbouring_space in board_state.piece_vectors[player]:
+                return True
+        return False
+    
+    
     '''
     Returns vector of exit hexes for a colour
     '''

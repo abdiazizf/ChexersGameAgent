@@ -6,6 +6,7 @@ Created on May 8, 2019
 
 import numpy as np
 from _collections import defaultdict
+from A_n_J.Action import Action
 
 class MCNode(object):
     '''
@@ -46,7 +47,12 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
-        return possible_moves[np.random.randint(len(possible_moves))]
+
+        if(possible_moves):
+            move_to_use = possible_moves[np.random.randint(len(possible_moves))]
+        else:
+            move_to_use = Action((0,0),(0,0),"PASS")
+        return move_to_use 
     
     def rollout(self):
         current_state = self.state
