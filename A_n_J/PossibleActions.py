@@ -56,11 +56,16 @@ class PossibleActions(object):
         if(move == "EXIT"):
             if(action.destination not in self.exit_hexes[board_state.player_colour]):
                 return False
+            else: 
+                return True
+        #Check destination on board
         if(action.on_board() != True):
             return False
+        #Check hex isn't occupied
         for player in board_state.piece_vectors:
             if(action.destination in board_state.piece_vectors[player]):
                 return False
+            #Check conditions for jump are met
         if(move == "JUMP"):
             if not self.has_neighbour_in_jump_direction(action, board_state):
                 return False

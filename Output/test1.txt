@@ -45,7 +45,7 @@ run `python referee --help` for additional usage information.
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('MOVE', ((-3, 3), (-2, 2)))
-*   time:  + 0.250s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.047s  (just elapsed)    0.047s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -71,18 +71,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('MOVE', ((-3, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -3)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
 * updating green player with red's action ('MOVE', ((-3, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -3)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * updating blue player with red's action ('MOVE', ((-3, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -3)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((3, -3), (3, -2)))
-*   time:  + 0.250s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.062s  (just elapsed)    0.062s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -108,18 +105,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((3, -3), (3, -2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
 * updating green player with green's action ('MOVE', ((3, -3), (3, -2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
 * updating blue player with green's action ('MOVE', ((3, -3), (3, -2)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (0, 3)]}
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('MOVE', ((0, 3), (-1, 3)))
-*   time:  + 0.250s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.109s  (just elapsed)    0.109s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -145,18 +139,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
 * updating green player with blue's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
 * updating blue player with blue's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.109s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('MOVE', ((-2, 2), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    0.484s  (game total)
+*   time:  + 0.047s  (just elapsed)    0.094s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -182,18 +173,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('MOVE', ((-2, 2), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.094s  (game total)
 * updating green player with red's action ('MOVE', ((-2, 2), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
 * updating blue player with red's action ('MOVE', ((-2, 2), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.109s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((3, -2), (3, -1)))
-*   time:  + 0.250s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.109s  (just elapsed)    0.172s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -219,18 +207,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((3, -2), (3, -1)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.094s  (game total)
 * updating green player with green's action ('MOVE', ((3, -2), (3, -1)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating blue player with green's action ('MOVE', ((3, -2), (3, -1)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 3)]}
-*   time:  + 0.016s  (just elapsed)    0.266s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.109s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-1, 3), (-3, 3)))
-*   time:  + 0.234s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.141s  (just elapsed)    0.250s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -256,18 +241,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-1, 3), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.094s  (game total)
 * updating green player with blue's action ('JUMP', ((-1, 3), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating blue player with blue's action ('JUMP', ((-1, 3), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-3, 2)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('MOVE', ((-3, 2), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    0.719s  (game total)
+*   time:  + 0.078s  (just elapsed)    0.172s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -293,18 +275,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating green player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating blue player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (3, -1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((3, -1), (2, 0)))
-*   time:  + 0.234s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.141s  (just elapsed)    0.312s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -330,18 +309,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((3, -1), (2, 0)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating green player with green's action ('MOVE', ((3, -1), (2, 0)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.312s  (game total)
 * updating blue player with green's action ('MOVE', ((3, -1), (2, 0)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('MOVE', ((-2, 3), (-2, 2)))
-*   time:  + 0.234s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.078s  (just elapsed)    0.328s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -367,18 +343,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('MOVE', ((-2, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
 * updating green player with blue's action ('MOVE', ((-2, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.312s  (game total)
 * updating blue player with blue's action ('MOVE', ((-2, 3), (-2, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.328s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    0.953s  (game total)
+*   time:  + 0.109s  (just elapsed)    0.281s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -404,18 +377,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.281s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.312s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (2, 0)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.328s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((2, 0), (1, 1)))
-*   time:  + 0.250s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.047s  (just elapsed)    0.359s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -441,18 +411,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((2, 0), (1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.281s  (game total)
 * updating green player with green's action ('MOVE', ((2, 0), (1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.359s  (game total)
 * updating blue player with green's action ('MOVE', ((2, 0), (1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    0.734s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.328s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.250s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.062s  (just elapsed)    0.391s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -478,18 +445,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.281s  (game total)
 * updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.359s  (game total)
 * updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.391s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    1.188s  (game total)
+*   time:  + 0.062s  (just elapsed)    0.344s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -515,18 +479,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.188s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.344s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.359s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (1, 1)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.391s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((1, 1), (0, 2)))
-*   time:  + 0.250s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.047s  (just elapsed)    0.406s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -552,18 +513,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((1, 1), (0, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.188s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.344s  (game total)
 * updating green player with green's action ('MOVE', ((1, 1), (0, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.406s  (game total)
 * updating blue player with green's action ('MOVE', ((1, 1), (0, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.391s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
-*   time:  + 0.250s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.047s  (just elapsed)    0.438s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -589,18 +547,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.188s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.344s  (game total)
 * updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.016s  (just elapsed)    1.250s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.406s  (game total)
 * updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.438s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    1.422s  (game total)
+*   time:  + 0.125s  (just elapsed)    0.469s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -626,18 +581,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.469s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.250s  (game total)
+*   time:  + 0.016s  (just elapsed)    0.422s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.438s  (game total)
 * == green player's turn ==
 * asking green player for next action...
 *   green player returned action: ('MOVE', ((0, 2), (0, 3)))
-*   time:  + 0.234s  (just elapsed)    1.484s  (game total)
+*   time:  + 0.078s  (just elapsed)    0.500s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -663,18 +615,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with green's action ('MOVE', ((0, 2), (0, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.469s  (game total)
 * updating green player with green's action ('MOVE', ((0, 2), (0, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
 * updating blue player with green's action ('MOVE', ((0, 2), (0, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.438s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.234s  (just elapsed)    1.469s  (game total)
+*   time:  + 0.109s  (just elapsed)    0.547s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -700,18 +649,15 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.469s  (game total)
 * updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
 * updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.469s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.547s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    1.656s  (game total)
+*   time:  + 0.078s  (just elapsed)    0.547s  (game total)
 * displaying game board:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
@@ -737,20 +683,17 @@ run `python referee --help` for additional usage information.
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.656s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.547s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.500s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (0, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.469s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.547s  (game total)
 * == green player's turn ==
 * asking green player for next action...
-*   green player returned action: ('MOVE', ((0, 3), (-1, 3)))
-*   time:  + 0.234s  (just elapsed)    1.719s  (game total)
+*   green player returned action: ('EXIT', (0, 3))
+*   time:  + 0.031s  (just elapsed)    0.531s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
 *               |   G   |   G   |   G   |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
@@ -770,24 +713,21 @@ run `python referee --help` for additional usage information.
 *           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |       |   G   |       |   | input |
+*               |       |       |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.656s  (game total)
-* updating green player with green's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.719s  (game total)
-* updating blue player with green's action ('MOVE', ((0, 3), (-1, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.469s  (game total)
+* updating red player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.016s  (just elapsed)    0.562s  (game total)
+* updating green player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    0.531s  (game total)
+* updating blue player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    0.547s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
-*   time:  + 0.219s  (just elapsed)    1.688s  (game total)
+*   time:  + 0.125s  (just elapsed)    0.672s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
 *               |   G   |   G   |   G   |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
@@ -807,24 +747,21 @@ run `python referee --help` for additional usage information.
 *           |       |   B   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |       |   G   |       |   | input |
+*               |   B   |       |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.656s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.562s  (game total)
 * updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.719s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.531s  (game total)
 * updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.672s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    1.891s  (game total)
+*   time:  + 0.156s  (just elapsed)    0.719s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
 *               |   G   |   G   |   G   |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
@@ -844,26 +781,431 @@ run `python referee --help` for additional usage information.
 *           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |   G   |       |   | input |
+*               |   B   |   R   |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.719s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.531s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 3)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.016s  (just elapsed)    1.703s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.672s  (game total)
 * == green player's turn ==
 * asking green player for next action...
-*   green player returned action: ('MOVE', ((-1, 3), (-1, 2)))
-*   time:  + 0.234s  (just elapsed)    1.953s  (game total)
+*   green player returned action: ('MOVE', ((2, -3), (2, -2)))
+*   time:  + 0.125s  (just elapsed)    0.656s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |   G   |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((2, -3), (2, -2)))...
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+* updating green player with green's action ('MOVE', ((2, -3), (2, -2)))...
+*   time:  + 0.000s  (just elapsed)    0.656s  (game total)
+* updating blue player with green's action ('MOVE', ((2, -3), (2, -2)))...
+*   time:  + 0.000s  (just elapsed)    0.672s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.047s  (just elapsed)    0.719s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |   G   |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.656s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.047s  (just elapsed)    0.766s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |   G   |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.656s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((2, -2), (2, -1)))
+*   time:  + 0.109s  (just elapsed)    0.766s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |   G   |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((2, -2), (2, -1)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating green player with green's action ('MOVE', ((2, -2), (2, -1)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating blue player with green's action ('MOVE', ((2, -2), (2, -1)))...
+*   time:  + 0.000s  (just elapsed)    0.719s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.031s  (just elapsed)    0.750s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |   G   |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.750s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.156s  (just elapsed)    0.922s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |   G   |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.922s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.766s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.750s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((2, -1), (2, 0)))
+*   time:  + 0.141s  (just elapsed)    0.906s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |   G   |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((2, -1), (2, 0)))...
+*   time:  + 0.000s  (just elapsed)    0.922s  (game total)
+* updating green player with green's action ('MOVE', ((2, -1), (2, 0)))...
+*   time:  + 0.000s  (just elapsed)    0.906s  (game total)
+* updating blue player with green's action ('MOVE', ((2, -1), (2, 0)))...
+*   time:  + 0.000s  (just elapsed)    0.750s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.078s  (just elapsed)    0.828s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |   G   |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.922s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.906s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.828s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.078s  (just elapsed)    1.000s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |   G   |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.000s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.906s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.828s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((2, 0), (1, 1)))
+*   time:  + 0.078s  (just elapsed)    0.984s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((2, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.000s  (game total)
+* updating green player with green's action ('MOVE', ((2, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+* updating blue player with green's action ('MOVE', ((2, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    0.828s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.031s  (just elapsed)    0.859s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.000s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.859s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.078s  (just elapsed)    1.078s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.078s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.984s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.859s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, 1), (0, 2)))
+*   time:  + 0.078s  (just elapsed)    1.062s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -878,29 +1220,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |       |       |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   R   |   G   |       |   B   |
+*           |       |   R   |       |   G   |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |   B   |   R   |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('MOVE', ((-1, 3), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
-* updating green player with green's action ('MOVE', ((-1, 3), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
-* updating blue player with green's action ('MOVE', ((-1, 3), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    1.703s  (game total)
+* updating red player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    1.078s  (game total)
+* updating green player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    1.062s  (game total)
+* updating blue player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    0.859s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.250s  (just elapsed)    1.953s  (game total)
+*   time:  + 0.109s  (just elapsed)    0.969s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |   G   |   G   |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -915,29 +1254,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |       |   B   |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   B   |   G   |       |   B   |
+*           |       |   B   |       |   G   |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |       |   R   |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+*   time:  + 0.000s  (just elapsed)    1.078s  (game total)
 * updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    1.062s  (game total)
 * updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.969s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    2.125s  (game total)
+*   time:  + 0.141s  (just elapsed)    1.219s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |   G   |   G   |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -952,29 +1288,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |   B   |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   R   |   G   |       |   B   |
+*           |       |   R   |       |   G   |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |       |       |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.125s  (game total)
+*   time:  + 0.000s  (just elapsed)    1.219s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    1.062s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
+*   time:  + 0.000s  (just elapsed)    0.969s  (game total)
 * == green player's turn ==
 * asking green player for next action...
-*   green player returned action: ('JUMP', ((-1, 2), (-3, 2)))
-*   time:  + 0.219s  (just elapsed)    2.172s  (game total)
+*   green player returned action: ('MOVE', ((0, 2), (0, 3)))
+*   time:  + 0.109s  (just elapsed)    1.172s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |   G   |   G   |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -989,29 +1322,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |   B   |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   G   |       |       |   B   |
+*           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |       |       |       |   | input |
+*               |       |       |       |   G   |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.125s  (game total)
-* updating green player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.172s  (game total)
-* updating blue player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    1.953s  (game total)
+* updating red player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.219s  (game total)
+* updating green player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.172s  (game total)
+* updating blue player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    0.969s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
-*   time:  + 0.234s  (just elapsed)    2.188s  (game total)
+*   time:  + 0.141s  (just elapsed)    1.109s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |   G   |   G   |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1026,140 +1356,1352 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |       |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   B   |       |       |   B   |
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |   G   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.219s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.172s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.109s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.062s  (just elapsed)    1.281s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 1 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |   G   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.281s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.172s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.109s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('EXIT', (0, 3))
+*   time:  + 0.078s  (just elapsed)    1.250s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.281s  (game total)
+* updating green player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.250s  (game total)
+* updating blue player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.109s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.125s  (just elapsed)    1.234s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.281s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.250s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.047s  (just elapsed)    1.328s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.328s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.250s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, -3), (1, -2)))
+*   time:  + 0.094s  (just elapsed)    1.344s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |   G   |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, -3), (1, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.328s  (game total)
+* updating green player with green's action ('MOVE', ((1, -3), (1, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* updating blue player with green's action ('MOVE', ((1, -3), (1, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.234s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.109s  (just elapsed)    1.344s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |   G   |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |   B   |       |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
+*   time:  + 0.000s  (just elapsed)    1.328s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.078s  (just elapsed)    1.406s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |   G   |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.406s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, -2), (1, -1)))
+*   time:  + 0.078s  (just elapsed)    1.422s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |   G   |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, -2), (1, -1)))...
+*   time:  + 0.000s  (just elapsed)    1.406s  (game total)
+* updating green player with green's action ('MOVE', ((1, -2), (1, -1)))...
+*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+* updating blue player with green's action ('MOVE', ((1, -2), (1, -1)))...
+*   time:  + 0.000s  (just elapsed)    1.344s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.047s  (just elapsed)    1.391s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |   G   |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.406s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.391s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.078s  (just elapsed)    1.484s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |   G   |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.422s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.391s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, -1), (1, 0)))
+*   time:  + 0.125s  (just elapsed)    1.547s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |   G   |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, -1), (1, 0)))...
+*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+* updating green player with green's action ('MOVE', ((1, -1), (1, 0)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* updating blue player with green's action ('MOVE', ((1, -1), (1, 0)))...
+*   time:  + 0.000s  (just elapsed)    1.391s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.062s  (just elapsed)    1.453s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |   G   |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.484s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.453s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.125s  (just elapsed)    1.609s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |   G   |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.609s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.453s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, 0), (1, 1)))
+*   time:  + 0.031s  (just elapsed)    1.578s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.609s  (game total)
+* updating green player with green's action ('MOVE', ((1, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.578s  (game total)
+* updating blue player with green's action ('MOVE', ((1, 0), (1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.453s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.047s  (just elapsed)    1.500s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.609s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.578s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.500s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.078s  (just elapsed)    1.688s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |   G   |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.016s  (just elapsed)    1.594s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.500s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((1, 1), (0, 2)))
+*   time:  + 0.094s  (just elapsed)    1.688s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |   G   |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating green player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating blue player with green's action ('MOVE', ((1, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    1.500s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.047s  (just elapsed)    1.547s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |   G   |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.062s  (just elapsed)    1.750s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |   G   |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.750s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.688s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, 2), (0, 3)))
+*   time:  + 0.109s  (just elapsed)    1.797s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |   G   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.750s  (game total)
+* updating green player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.797s  (game total)
+* updating blue player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.547s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.078s  (just elapsed)    1.625s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |   G   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.750s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.797s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.625s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.062s  (just elapsed)    1.812s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 2 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |   G   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.797s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.625s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('EXIT', (0, 3))
+*   time:  + 0.062s  (just elapsed)    1.859s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.859s  (game total)
+* updating blue player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    1.625s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.109s  (just elapsed)    1.734s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.859s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.734s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.859s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.734s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, -3), (0, -2)))
+*   time:  + 0.031s  (just elapsed)    1.891s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, -3), (0, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with green's action ('MOVE', ((0, -3), (0, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating blue player with green's action ('MOVE', ((0, -3), (0, -2)))...
+*   time:  + 0.000s  (just elapsed)    1.734s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.031s  (just elapsed)    1.766s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.812s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.766s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.078s  (just elapsed)    1.891s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.766s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, -2), (0, -1)))
+*   time:  + 0.109s  (just elapsed)    2.000s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |   G   |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, -2), (0, -1)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating green player with green's action ('MOVE', ((0, -2), (0, -1)))...
+*   time:  + 0.000s  (just elapsed)    2.000s  (game total)
+* updating blue player with green's action ('MOVE', ((0, -2), (0, -1)))...
+*   time:  + 0.000s  (just elapsed)    1.766s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.078s  (just elapsed)    1.844s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |   G   |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.891s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.000s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.844s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.094s  (just elapsed)    1.984s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |   G   |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.984s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.000s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    1.844s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, -1), (0, 0)))
+*   time:  + 0.047s  (just elapsed)    2.047s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |   G   |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, -1), (0, 0)))...
+*   time:  + 0.000s  (just elapsed)    1.984s  (game total)
+* updating green player with green's action ('MOVE', ((0, -1), (0, 0)))...
+*   time:  + 0.000s  (just elapsed)    2.047s  (game total)
+* updating blue player with green's action ('MOVE', ((0, -1), (0, 0)))...
+*   time:  + 0.000s  (just elapsed)    1.844s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.109s  (just elapsed)    1.953s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |   G   |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.984s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.047s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.016s  (just elapsed)    1.969s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
+*   time:  + 0.062s  (just elapsed)    2.047s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |   G   |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.016s  (just elapsed)    2.062s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.047s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.969s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, 0), (0, 1)))
+*   time:  + 0.062s  (just elapsed)    2.109s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |   B   |   G   |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, 0), (0, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.062s  (game total)
+* updating green player with green's action ('MOVE', ((0, 0), (0, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating blue player with green's action ('MOVE', ((0, 0), (0, 1)))...
+*   time:  + 0.000s  (just elapsed)    1.969s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
+*   time:  + 0.094s  (just elapsed)    2.062s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |   R   |       |   G   |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |       |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.062s  (game total)
+* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
+*   time:  + 0.016s  (just elapsed)    2.078s  (game total)
+* == red player's turn ==
+* asking red player for next action...
+*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
+*   time:  + 0.047s  (just elapsed)    2.109s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |   G   |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.078s  (game total)
+* == green player's turn ==
+* asking green player for next action...
+*   green player returned action: ('MOVE', ((0, 1), (0, 2)))
+*   time:  + 0.078s  (just elapsed)    2.188s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   R   |       |   G   |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   B   |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((0, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating green player with green's action ('MOVE', ((0, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
+* updating blue player with green's action ('MOVE', ((0, 1), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    2.078s  (game total)
+* == blue player's turn ==
+* asking blue player for next action...
+*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
+*   time:  + 0.047s  (just elapsed)    2.125s  (game total)
+* displaying game board:
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |       |       |       |       | 
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*       |   R   |       |   B   |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
+*           |       |   B   |       |   G   |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |       |   R   |       |       |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.109s  (game total)
+* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
+* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
 *   time:  + 0.000s  (just elapsed)    2.125s  (game total)
-* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.172s  (game total)
-* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
-* == red player's turn ==
-* asking red player for next action...
-*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    2.359s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |       |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   R   |       |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.359s  (game total)
-* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.172s  (game total)
-* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
-* == green player's turn ==
-* asking green player for next action...
-*   green player returned action: ('JUMP', ((-3, 2), (-1, 2)))
-*   time:  + 0.234s  (just elapsed)    2.406s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |       |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   G   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.359s  (game total)
-* updating green player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.406s  (game total)
-* updating blue player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
-* == blue player's turn ==
-* asking blue player for next action...
-*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.234s  (just elapsed)    2.422s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |   B   |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   B   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.359s  (game total)
-* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.406s  (game total)
-* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.422s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    2.594s  (game total)
+*   time:  + 0.078s  (just elapsed)    2.188s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |       |       |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1174,29 +2716,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |   B   |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   R   |   G   |       |   B   |
+*           |       |   R   |       |   G   |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |       |       |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.594s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.406s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.422s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.125s  (game total)
 * == green player's turn ==
 * asking green player for next action...
-*   green player returned action: ('JUMP', ((-1, 2), (-3, 2)))
-*   time:  + 0.219s  (just elapsed)    2.625s  (game total)
+*   green player returned action: ('MOVE', ((0, 2), (0, 3)))
+*   time:  + 0.062s  (just elapsed)    2.250s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |       |       |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1211,29 +2750,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |   B   |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   G   |       |       |   B   |
+*           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |       |       |       |   | input |
+*               |       |       |       |   G   |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.594s  (game total)
-* updating green player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.625s  (game total)
-* updating blue player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.422s  (game total)
+* updating red player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
+* updating green player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.250s  (game total)
+* updating blue player with green's action ('MOVE', ((0, 2), (0, 3)))...
+*   time:  + 0.000s  (just elapsed)    2.125s  (game total)
 * == blue player's turn ==
 * asking blue player for next action...
 *   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
-*   time:  + 0.234s  (just elapsed)    2.656s  (game total)
+*   time:  + 0.109s  (just elapsed)    2.234s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |       |       |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1248,29 +2784,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |   R   |       |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   B   |       |       |   B   |
+*           |       |   B   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |       |       |       |   | input |
+*               |   B   |       |       |   G   |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.594s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.188s  (game total)
 * updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.625s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.250s  (game total)
 * updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.656s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.234s  (game total)
 * == red player's turn ==
 * asking red player for next action...
 *   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.219s  (just elapsed)    2.812s  (game total)
+*   time:  + 0.062s  (just elapsed)    2.250s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 3 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |       |       |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1285,29 +2818,26 @@ run `python referee --help` for additional usage information.
 *       |   R   |       |       |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   R   |       |       |   B   |
+*           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |       |       |   | input |
+*               |   B   |   R   |       |   G   |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.812s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.250s  (game total)
 * updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.625s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.250s  (game total)
 * updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.656s  (game total)
+*   time:  + 0.000s  (just elapsed)    2.234s  (game total)
 * == green player's turn ==
 * asking green player for next action...
-*   green player returned action: ('JUMP', ((-3, 2), (-1, 2)))
-*   time:  + 0.219s  (just elapsed)    2.844s  (game total)
+*   green player returned action: ('EXIT', (0, 3))
+*   time:  + 0.078s  (just elapsed)    2.328s  (game total)
 * displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
+*   scores: Red: 0 exits, Green: 4 exits, Blue: 0 exits.
 *   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
+*               |       |       |       |       | 
 *               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
 *            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
 *           |       |       |       |       |       |
@@ -1322,279 +2852,17 @@ run `python referee --help` for additional usage information.
 *       |   R   |       |       |       |       |   B   |
 *       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
 *        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   G   |   G   |       |   B   |
+*           |       |   R   |       |       |   B   |
 *           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
 *            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
 *               |   B   |   R   |       |       |   | input |
 *               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
 *                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.812s  (game total)
-* updating green player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.844s  (game total)
-* updating blue player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    2.656s  (game total)
-* == blue player's turn ==
-* asking blue player for next action...
-*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.234s  (just elapsed)    2.891s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |   B   |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   B   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.812s  (game total)
-* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.844s  (game total)
-* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    2.891s  (game total)
-* == red player's turn ==
-* asking red player for next action...
-*   red player returned action: ('JUMP', ((-2, 3), (-2, 1)))
-*   time:  + 0.234s  (just elapsed)    3.047s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |   R   |   B   |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   R   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |       |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    3.047s  (game total)
-* updating green player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.844s  (game total)
-* updating blue player with red's action ('JUMP', ((-2, 3), (-2, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.891s  (game total)
-* == green player's turn ==
-* asking green player for next action...
-*   green player returned action: ('JUMP', ((-1, 2), (-3, 2)))
-*   time:  + 0.234s  (just elapsed)    3.078s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |   R   |   B   |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   G   |       |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |       |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    3.047s  (game total)
-* updating green player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    3.078s  (game total)
-* updating blue player with green's action ('JUMP', ((-1, 2), (-3, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1)]}
-*   time:  + 0.000s  (just elapsed)    2.891s  (game total)
-* == blue player's turn ==
-* asking blue player for next action...
-*   blue player returned action: ('JUMP', ((-1, 1), (-3, 3)))
-*   time:  + 0.234s  (just elapsed)    3.125s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |   R   |       |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   B   |       |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |       |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.047s  (game total)
-* updating green player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.078s  (game total)
-* updating blue player with blue's action ('JUMP', ((-1, 1), (-3, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 1)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.125s  (game total)
-* == red player's turn ==
-* asking red player for next action...
-*   red player returned action: ('JUMP', ((-2, 1), (-2, 3)))
-*   time:  + 0.234s  (just elapsed)    3.281s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |       |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |   G   |   R   |       |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.281s  (game total)
-* updating green player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.078s  (game total)
-* updating blue player with red's action ('JUMP', ((-2, 1), (-2, 3)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3), (-2, 2)], 'green': [(0, -3), (1, -3), (2, -3), (-3, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.125s  (game total)
-* == green player's turn ==
-* asking green player for next action...
-*   green player returned action: ('JUMP', ((-3, 2), (-1, 2)))
-*   time:  + 0.219s  (just elapsed)    3.297s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |       |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   G   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |   B   |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.281s  (game total)
-* updating green player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.297s  (game total)
-* updating blue player with green's action ('JUMP', ((-3, 2), (-1, 2)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2), (-2, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-3, 3)]}
-*   time:  + 0.000s  (just elapsed)    3.125s  (game total)
-* == blue player's turn ==
-* asking blue player for next action...
-*   blue player returned action: ('JUMP', ((-3, 3), (-1, 1)))
-*   time:  + 0.188s  (just elapsed)    3.312s  (game total)
-* displaying game board:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
-*               |   G   |   G   |   G   |       | 
-*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
-*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*           |       |       |       |       |       |
-*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
-*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-. 
-*       |       |       |       |       |       |       |
-*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
-*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
-*   |   R   |       |       |       |       |       |   B   |
-*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
-*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*       |   R   |       |   B   |       |       |   B   |
-*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
-*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' 
-*           |       |   B   |   G   |       |   B   |
-*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
-*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
-*               |       |   R   |       |       |   | input |
-*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
-*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
-* updating red player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.281s  (game total)
-* updating green player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.297s  (game total)
-* updating blue player with blue's action ('JUMP', ((-3, 3), (-1, 1)))...
-{'red': [(-3, 0), (-3, 1), (-2, 3)], 'green': [(0, -3), (1, -3), (2, -3), (-1, 2)], 'blue': [(3, 0), (2, 1), (1, 2), (-1, 1), (-2, 2)]}
-*   time:  + 0.000s  (just elapsed)    3.312s  (game total)
+* updating red player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    2.250s  (game total)
+* updating green player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    2.328s  (game total)
+* updating blue player with green's action ('EXIT', (0, 3))...
+*   time:  + 0.000s  (just elapsed)    2.234s  (game total)
 * == game over! ==
-* draw detected: game state occurred 4 times.
+* winner: Green

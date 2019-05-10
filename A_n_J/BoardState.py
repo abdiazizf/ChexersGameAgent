@@ -68,7 +68,6 @@ class BoardState(object):
             new_vector[colour].remove(origin)
             new_vector[colour].append(destination)
         self.score[self.player_colour]["turns"] += 1
-        #print(new_vector,action.format_output(),colour)
         return new_vector
         
     def update_board_state(self,action,colour,score):

@@ -35,6 +35,9 @@ class Action(object):
     '''
     def format_output(self):
         return (self.action_type, ((self.origin), (self.destination)))
+    
+    def format_exit(self):
+        return (self.action_type, (self.origin))
        
     
     def __init__(self, origin, direction, action_type):

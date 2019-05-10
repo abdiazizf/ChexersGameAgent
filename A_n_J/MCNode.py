@@ -47,9 +47,12 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
-
         if(possible_moves):
+            for move in possible_moves:
+                if(move.action_type == "EXIT"):
+                    return move
             move_to_use = possible_moves[np.random.randint(len(possible_moves))]
+
         else:
             move_to_use = Action((0,0),(0,0),"PASS")
         return move_to_use 

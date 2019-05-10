@@ -43,9 +43,12 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(1)
-        if action:    
-            return action.format_output()
+        action = self.mcAI.best_action(100)
+        if action:
+            if(action.action_type == "EXIT"):
+                return action.format_exit()
+            else:    
+                return action.format_output()
         else:
             return ("PASS", None)
 
@@ -74,16 +77,10 @@ class Player:
         
         new_action = self.convert_sim_action(action)
         self.current_state = self.current_state.update_board_state(new_action,colour,self.current_score)
-        print(self.current_state.piece_vectors)
+        #print(self.current_state.piece_vectors)
         
         new_node = MCNode(self.current_state)
         self.mcAI.initial_state = new_node
-        
-        
-        #possible_actions = self.mcAI.initial_state.state.legal_moves.actions
-        #for action in possible_actions:
-            #print(action.format_output())
-        
 
     
     '''
@@ -110,9 +107,15 @@ class Player:
         
     def convert_sim_action(self,action):
         type = action[0]
-        origin = action[1][0]
-        destination = action[1][1]
-        direction = (destination[0] - origin[0],destination[1] - origin[1])
-        
-        return Action(origin,direction,type)
+        if (type == "EXIT"):
+            origin = action[1]
+            direction = (0,0)
+            return Action(origin,direction,type)
+        else: 
+            origin = action[1][0]
+            destination = action[1][1]
+    
+            direction = (destination[0] - origin[0],destination[1] - origin[1])
+            
+            return Action(origin,direction,type)
         
