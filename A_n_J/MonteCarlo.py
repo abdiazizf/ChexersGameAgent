@@ -3,8 +3,6 @@ Created on May 7, 2019
 
 @author: Jordan
 '''
-from A_n_J.BoardState import BoardState
-from A_n_J.MCNode import MCNode
 
 class MonteCarlo(object):
     
@@ -15,23 +13,21 @@ class MonteCarlo(object):
         self.initial_state = root
     
     def best_action(self, num_simulations):
-        
+
         for _ in range(0, num_simulations):
             v = self.tree_policy()
             reward = v.rollout()
-            print("reward")
             v.backpropogate(reward)
-            print("BP")
+
         
-        return self.initial_state.best_child()
+        return self.initial_state.best_child(c_param = 0.).generated_by
     
     def tree_policy(self):
         current_state = self.initial_state
-        while not current_state.is_terminal_state():
-            print("EXPANDING STATE ")
-            if not current_state.fully_expanded():
+        while current_state.is_terminal_state() == False:
+            if current_state.fully_expanded() == False:
                 return current_state.expand()
             else: 
-                current_state = current_state.best_child()
+                return current_state.best_child()
                 
         return current_state

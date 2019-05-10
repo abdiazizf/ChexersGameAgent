@@ -5,6 +5,7 @@ Created on Apr 28, 2019
 '''
 from A_n_J.PossibleActions import PossibleActions
 import copy
+from copy import deepcopy
 
 class BoardState(object):
     '''
@@ -25,6 +26,7 @@ class BoardState(object):
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self)
         self.score = score
+        self.players_max_move = 0
         
     '''
     Takes an action and player colour as input, returns a new piece vector that
@@ -35,13 +37,14 @@ class BoardState(object):
         new_vector = copy.deepcopy(self.piece_vectors)
         if(action.action_type == "EXIT"):
             print("EXIT MOVE TAKEN")
-            self.score[colour] +=1
+            self.score[colour]["exits"] +=1
             origin = action.origin
             new_vector[colour].remove(origin)
         else:
             new_vector[colour].remove(action.origin)
             new_position = action.destination
             new_vector[colour].append(new_position) 
+        self.score[self.player_colour]["turns"] += 1
         return new_vector
         
     def player_turn_order(self):
@@ -54,17 +57,34 @@ class BoardState(object):
         
     def generate_successor(self,action):
         
+        #self.generated_by = action
         new_piece_vector = self.update_piece_positions(self.player_colour, action)
         next_player = self.player_turn_order()
         new_state = BoardState(next_player,new_piece_vector,self.score)
         
         return new_state
     
+    def update_board_state(self,action,colour,score):
+        new_piece_vector = self.update_piece_positions(colour, action)
+        next_player = self.player_turn_order()
+        new_score = deepcopy(score)
+
+        return BoardState(next_player,new_piece_vector,new_score)
+    
     def is_terminal_state(self):
+        max_moves = 0
         for player in self.score:
-            if self.score[player] == 4:
+            if self.score[player]["exits"] == 4:
                 return True
-        
+            elif self.score[player]["turns"] >= 256:
+                max_moves +=1
+        if max_moves == 3:
+            return True
+        else:
+            return False
+            
+    def get_winner(self):\
+        pass
     '''
     Defines comparison of two board states
     '''

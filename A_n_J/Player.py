@@ -2,7 +2,8 @@
 from A_n_J.BoardState import BoardState
 from A_n_J.MonteCarlo import MonteCarlo
 from A_n_J.MCNode import MCNode
-
+from A_n_J.Action import Action
+from copy import deepcopy
 
 class Player:
     def __init__(self, colour):
@@ -19,12 +20,14 @@ class Player:
         # TODO: Set up state representation.
         
         initial_pieces = self.construct_piece_vectors()
-        score = self.construct_score_dict()
-        self.board_state = BoardState(colour,initial_pieces,score)
+        self.initial_score = self.construct_score_dict()
+        self.current_score = deepcopy(self.initial_score)
+        self.initial_state = BoardState("red",initial_pieces,self.initial_score)
+        self.current_state = self.initial_state
         self.pieces_exited = 0
-        
-        self.root_node = MCNode(self.board_state)
+        self.root_node = MCNode(self.initial_state)
         self.mcAI = MonteCarlo(self.root_node)
+        self.colour = colour
 
     def action(self):
         """
@@ -41,9 +44,11 @@ class Player:
         
         # JUMP, MOVE, PASS, EXIT 
         
-        best_move = self.mcAI.best_action(1)
-        print(best_move)
-        return ("PASS", None)
+        action = self.mcAI.best_action(100)
+        if action:    
+            return action.format_output()
+        else:
+            return ("PASS", None)
 
 
     def update(self, colour, action):
@@ -64,8 +69,22 @@ class Player:
         (or pass) for the player colour (your method does not need to validate 
         the action/pass against the game rules).
         """
-        # TODO: Update state representation in response to action.
-        self.board_state = self.board_state.update_piece_positions(colour,action)
+        
+        type = action[0]
+        origin = action[1][0]
+        destination = action[1][1]
+        direction = (destination[0] - origin[0],destination[1] - origin[1])
+
+        self.current_score[colour]["turns"] += 1 
+        #print(self.current_state.score)
+
+
+        new_action = Action(origin,direction,type)
+        self.current_state = self.current_state.update_board_state(new_action,colour,self.current_score)
+        
+        new_node = MCNode(self.current_state)
+        self.mcAI.initial_state = new_node
+        
 
     
     '''
@@ -84,9 +103,9 @@ class Player:
     def construct_score_dict(self):
         
         score = {}
-        score["red"] = 0
-        score["green"] = 0
-        score["blue"] =  0
+        score["red"] = {"exits": 0, "turns":0}
+        score["green"] = {"exits": 0, "turns":0}
+        score["blue"] =  {"exits": 0, "turns":0}
         
         return score
         
