@@ -62,15 +62,9 @@ class PossibleActions(object):
                 return False    
         if(action.on_board() != True):
             return False
-        if(action.destination in board_state.piece_vectors[board_state.player_colour]):
-            return False
-        '''
-        if(move == "MOVE"):
-            temp = (action.destination[0] - (direction[0]), action.destination[1] - (direction[1]))
-            print(temp)
-            if temp in board_state.piece_vectors:
+        for player in board_state.piece_vectors:
+            if(action.destination in board_state.piece_vectors[player]):
                 return False
-        '''
         return True
     
     def print_moves(self):

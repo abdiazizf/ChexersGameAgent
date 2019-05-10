@@ -43,7 +43,6 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        
         action = self.mcAI.best_action(100)
         if action:    
             return action.format_output()
