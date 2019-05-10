@@ -96,6 +96,8 @@ class BoardState(object):
     
     def is_terminal_state(self):
         max_moves = 0
+        if not self.piece_vectors[self.player_colour]:
+            return True
         for player in self.score:
             if self.score[player]["exits"] == 4:
                 return True

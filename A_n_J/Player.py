@@ -45,7 +45,10 @@ class Player:
         # JUMP, MOVE, PASS, EXIT 
         action = self.mcAI.best_action(100)
         if action:
-            if(action.action_type == "EXIT"):
+            if not 'action_type' in action.__dict__:
+                print(action)
+                return ("PASS", None)
+            elif(action.action_type == "EXIT"):
                 return action.format_exit()
             else:    
                 return action.format_output()
@@ -74,7 +77,6 @@ class Player:
         
 
         self.current_score[colour]["turns"] += 1 
-        
         new_action = self.convert_sim_action(action)
         self.current_state = self.current_state.update_board_state(new_action,colour,self.current_score)
         #print(self.current_state.piece_vectors)
@@ -107,6 +109,8 @@ class Player:
         
     def convert_sim_action(self,action):
         type = action[0]
+        if (type == "PASS"):
+            return Action((0,0),(0,0),"PASS")
         if (type == "EXIT"):
             origin = action[1]
             direction = (0,0)

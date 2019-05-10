@@ -1,1 +1,1 @@
-from your_team_name.player import ExamplePlayer as Player
+from A_n_J.Player import Player as Player

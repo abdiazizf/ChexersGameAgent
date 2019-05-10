@@ -7,25 +7,25 @@ usage: referee [-h] [-V] [-d [delay]] [-s [space_limit]] [-t [time_limit]]
                [-D] [-v [{0,1,2,3}]] [-l [LOGFILE]]
                red green blue
 
-Conducts a game of Chexers between three Player classes.
+conducts a game of Chexers between three Player classes.
 
 player package/class specifications (positional arguments):
   
   The first 3 arguments are 'package specifications'. These specify which Python
   package/module to import and search for a class named 'Player' (to instantiate
   for each player in the game). When we test your programs this will just be
-  your top-level package (i.e. 'A_n_J').
+  your top-level package (i.e. 'your_team_name').
   
   If you want to play games with another player class from another package (e.g.
   while you develop your player), you can use any absolute module name (as used
-  with import statements, e.g. 'A_n_J.Player2') or relative path (to a
-  file or directory containing the Python module, e.g. 'A_n_J/player3'
-  or 'A_n_J/players/player4.py').
+  with import statements, e.g. 'your_team_name.player2') or relative path (to a
+  file or directory containing the Python module, e.g. 'your_team_name/player3'
+  or 'your_team_name/players/player4.py').
   
   Either way, the referee will attempt to import the specified package/module
   and then load a class named 'Player'. If you want the referee to look for a
   class with some other name you can put the alternative class name after a ':'
-  (e.g. 'A_n_J:DifferentPlayer').
+  (e.g. 'your_team_name:DifferentPlayer').
 
   red                   location of Red's Player class (e.g. package name)
   green                 location of Green's Player class (e.g. package name)
@@ -59,17 +59,14 @@ import argparse
 
 # Program information:
 PROGRAM = "referee"
-VERSION = "1.0 (released Apr 12 2019)"
-DESCRIP = "Conducts a game of Chexers between three Player classes."
+VERSION = "1.1 (released Apr 27 2019)"
+DESCRIP = "conducts a game of Chexers between three Player classes."
 
-WELCOME = f"""==================================================================
+WELCOME = f"""******************************************************************
 welcome to Chexers referee version {VERSION}.
 {DESCRIP}
-run `python referee --help` for additional usage information.
-==================================================================
-* from this line, all messages printed by the referee begin with *
-* (any other lines of output must be from your Player classes).
-* """
+run `python -m referee --help` for additional usage information.
+******************************************************************"""
 
 # default values (to use if flag is not provided)
 # and missing values (to use if flag is provided, but with no value)
@@ -93,18 +90,18 @@ PKG_SPEC_HELP = """
 The first 3 arguments are 'package specifications'. These specify which Python
 package/module to import and search for a class named 'Player' (to instantiate
 for each player in the game). When we test your programs this will just be
-your top-level package (i.e. 'A_n_J').
+your top-level package (i.e. 'your_team_name').
 
 If you want to play games with another player class from another package (e.g.
 while you develop your player), you can use any absolute module name (as used
-with import statements, e.g. 'A_n_J.Player2') or relative path (to a
-file or directory containing the Python module, e.g. 'A_n_J/player3'
-or 'A_n_J/players/player4.py').
+with import statements, e.g. 'your_team_name.player2') or relative path (to a
+file or directory containing the Python module, e.g. 'your_team_name/player3'
+or 'your_team_name/players/player4.py').
 
 Either way, the referee will attempt to import the specified package/module
 and then load a class named 'Player'. If you want the referee to look for a
 class with some other name you can put the alternative class name after a ':'
-(e.g. 'A_n_J:DifferentPlayer').
+(e.g. 'your_team_name:DifferentPlayer').
 """
 
 def get_options():

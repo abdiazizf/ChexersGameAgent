@@ -7,6 +7,8 @@ Created on May 8, 2019
 import numpy as np
 from _collections import defaultdict
 from A_n_J.Action import Action
+import random
+from numpy.random.mtrand import choice
 
 class MCNode(object):
     '''
@@ -29,16 +31,19 @@ class MCNode(object):
     
     def best_child(self, c_param = 1.4):
         choices_weights = [
-            (c.q / (c.n)) + c_param * np.sqrt((2 * np.log(self.n) / (c.n)))
+            (c.wins / (c.visits)) + c_param * np.sqrt((2 * np.log(self.visits) / (c.visits)))
             for c in self.children
         ]
-        return self.children[np.argmax(choices_weights)]
+        if(choices_weights):
+            return self.children[np.argmax(choices_weights)]
+        else:
+            return self
     
     def expand(self):
-        action = self.untried_actions.pop()
+        action = random.choice(self.untried_actions)
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
-        child_state.generated_by = action
+        child_state.generated_by = self.generated_by(action)
         self.children.append(child_state)
         return child_state
     
@@ -51,7 +56,7 @@ class MCNode(object):
             for move in possible_moves:
                 if(move.action_type == "EXIT"):
                     return move
-            move_to_use = possible_moves[np.random.randint(len(possible_moves))]
+            move_to_use = random.choice(possible_moves)
 
         else:
             move_to_use = Action((0,0),(0,0),"PASS")
@@ -71,6 +76,13 @@ class MCNode(object):
         if self.parent:
             self.parent.backpropogate(result)
     
+    def generated_by(self,action):
+        if(action == None):
+            action = Action((0,0),(0,0),"PASS")
+        if not '_generated_by' in self.__dict__:
+            self._generated_by = action
+        return self._generated_by
+    
     @property
     def untried_actions(self):
         if not '_untried_actions' in self.__dict__:
@@ -78,12 +90,12 @@ class MCNode(object):
         return self._untried_actions
     
     @property
-    def q(self):
+    def wins(self):
         wins = self.results[self.parent.state.player_colour]
         loses = self.results[-1 * self.parent.state.player_colour]
         
         return wins-loses
     
     @property
-    def n(self):
+    def visits(self):
         return self.number_of_visits

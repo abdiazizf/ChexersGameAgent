@@ -19,7 +19,7 @@ class PossibleActions(object):
     #possible jump directions
     axial_jump = [(2, 0), (2, -2), (0, -2), (-2, 0), (-2, 2), (0, 2)]
     # off board co-ordinates for generating valid exit moves
-    exit_hexes = {'red': [(4, -3),(4,-2),(4,-1)] , 'blue':[(-3,-1),(-2,-2),(-1,-3)] , 'green' :[(-3,4),(-2,4),(-1,4)]}
+    exit_spaces = {'red': [(3, -3), (3,-2) , (3,-1) , (3, 0)] , 'blue':[(0, -3), (-1,-2) , (-2,-1) , (-3, 0)] , 'green' :[(-3, 3), (-2, 3) , (-1, 3) , (0, 3)]}
     
     '''
     Input: current board_state and player colour
@@ -30,9 +30,14 @@ class PossibleActions(object):
         for piece in board_state.piece_vectors[player_colour]:
             for direction in self.axial_directions:
                 self.add_action(piece,direction,"MOVE",board_state)
-                self.add_action(piece, direction, "EXIT", board_state)
+                #self.add_action(piece, direction, "EXIT", board_state)
             for jump in self.axial_jump:
                 self.add_action(piece,jump,"JUMP",board_state)
+            for player in self.exit_spaces:
+                if piece in self.exit_spaces[player]:
+                    self.add_action(piece, direction, "EXIT", board_state)
+        if(len(self.actions) == 0):
+            self.actions.append(Action((0,0),(0,0),"PASS"))
                 
     '''
     Takes a piece, a direction and a move type as input, creates an action
@@ -43,7 +48,6 @@ class PossibleActions(object):
         tempAction = Action(piece,direction,move)
         if(self.valid_action(tempAction,board_state,move) == True):
             self.actions.append(tempAction)
-          
     '''
     Returns true if an action would end a piece on the board
     OR returns true if the conditions to jump are met and end would be 
@@ -54,7 +58,7 @@ class PossibleActions(object):
     def valid_action(self,action,board_state,move):
         
         if(move == "EXIT"):
-            if(action.destination not in self.exit_hexes[board_state.player_colour]):
+            if(action.origin not in self.exit_spaces[board_state.player_colour]):
                 return False
             else: 
                 return True
