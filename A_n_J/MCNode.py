@@ -35,8 +35,7 @@ class MCNode(object):
         
     def fully_expanded(self):
         cur_num_action = len(self.untried_actions)
-        print(cur_num_action)
-        if len(self.untried_actions) == 0:
+        if cur_num_action == 0:
             return True
         else:
             return False 
@@ -52,14 +51,12 @@ class MCNode(object):
             return self
     
     def expand(self):
-    
         action_index = random.randint(0,len(self.untried_actions)-1)
         action = self.untried_actions.pop(action_index)        
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
         child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
-        print(self.children)
         return child_state
     
     def is_terminal_state(self):

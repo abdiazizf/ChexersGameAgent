@@ -18,16 +18,16 @@ class MonteCarlo(object):
             v = self.tree_policy()
             simulation_result = v.rollout()
             v.backpropogate(simulation_result)
-        
-        best_choice_node = self.initial_state.best_child(c_param = 1.)
+        best_choice_node = self.initial_state.best_child(c_param = 0.)
         return best_choice_node.generated_by
         
     
+    #TODO: Fix expansion of nodes, so far I don't think it goes deep enough 
     def tree_policy(self):
         current_state = self.initial_state
         while current_state.is_terminal_state() == False:
             if current_state.fully_expanded() == False:
                 return current_state.expand()
-            else:
-                current_state = current_state.best_child()
+            current_state = current_state.best_child()
+            
         return current_state
