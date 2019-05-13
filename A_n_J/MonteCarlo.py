@@ -15,12 +15,13 @@ class MonteCarlo(object):
     def best_action(self, num_simulations):
         
         for sim in range(0, num_simulations):
+            
             selected_node = self.expand_tree()
             simulation_result = selected_node.rollout()
             selected_node.backpropogate(simulation_result)
+            
         best_choice_node = self.initial_node.best_child(c_param = 0.5)
         return best_choice_node.generated_by
-        
     
     def traverse(self):
         node = self.initial_node

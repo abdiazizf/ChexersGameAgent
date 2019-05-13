@@ -24,12 +24,6 @@ class MCNode(object):
         self.parent = parent
         self.children = []
         self.number_of_visits = 0
-        
-        result_dict = {}
-        result_dict['red'] = 0
-        result_dict['blue'] = 0
-        result_dict['green'] = 0
-        
         self.results = defaultdict(int)
         self.generated_by = None
         
@@ -64,14 +58,7 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
-        if(possible_moves):
-            for move in possible_moves:
-                if(move.action_type == "EXIT"):
-                    return move
-            move_to_use = random.choice(possible_moves)
-
-        else:
-            move_to_use = Action((0,0),(0,0),"PASS")
+        move_to_use = random.choice(possible_moves)
         return move_to_use 
     
     def rollout(self):
