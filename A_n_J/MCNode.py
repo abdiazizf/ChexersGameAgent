@@ -24,17 +24,22 @@ class MCNode(object):
         self.parent = parent
         self.children = []
         self.number_of_visits = 0
-        self.results = defaultdict(int)
         
-        if(parent):
-            if 'generated_by' in parent.__dict__:
-                self.generated_by = parent.generated_by
-            else: 
-                self.generated_by = Action((0,0),(0,0),"PASS")
+        result_dict = {}
+        result_dict['red'] = 0
+        result_dict['blue'] = 0
+        result_dict['green'] = 0
+        
+        self.results = defaultdict(int)
         self.generated_by = None
         
     def fully_expanded(self):
-        return len(self.untried_actions) == 0
+        cur_num_action = len(self.untried_actions)
+        print(cur_num_action)
+        if len(self.untried_actions) == 0:
+            return True
+        else:
+            return False 
     
     def best_child(self, c_param = 1.4):
         choice_weights = []
@@ -54,6 +59,7 @@ class MCNode(object):
         child_state = MCNode(next_state, parent=self)
         child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
+        print(self.children)
         return child_state
     
     def is_terminal_state(self):
@@ -73,11 +79,12 @@ class MCNode(object):
     
     def rollout(self):
         current_state = self.state
-        while not current_state.is_terminal_state():
+        while current_state.is_terminal_state() != True:
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
             current_state = current_state.generate_successor(action)
-        return current_state.get_winner()
+        winner = current_state.get_winner()
+        return winner
                                                   
     def backpropogate(self, result):
         self.number_of_visits += 1 
@@ -103,7 +110,6 @@ class MCNode(object):
     def wins(self):
         wins = self.results[self.parent.state.player_colour]
         loses = self.results[-1 * self.parent.state.player_colour]
-        
         return wins-loses
     
     @property

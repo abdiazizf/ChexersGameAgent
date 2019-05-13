@@ -13,28 +13,21 @@ class MonteCarlo(object):
         self.initial_state = root
     
     def best_action(self, num_simulations):
-
-        for _ in range(0, num_simulations):
+        
+        for sim in range(0, num_simulations):
             v = self.tree_policy()
             simulation_result = v.rollout()
             v.backpropogate(simulation_result)
-            
-
-
-        return self.initial_state.best_child(c_param = 0.5).generated_by
-
+        
+        best_choice_node = self.initial_state.best_child(c_param = 1.)
+        return best_choice_node.generated_by
+        
     
     def tree_policy(self):
         current_state = self.initial_state
         while current_state.is_terminal_state() == False:
             if current_state.fully_expanded() == False:
                 return current_state.expand()
-            current_state = current_state.best_child()
-            '''
-            if current_state.fully_expanded() == False:
-                return current_state.expand()
-            else: 
-                print("BEST")
+            else:
                 current_state = current_state.best_child()
-            ''' 
         return current_state

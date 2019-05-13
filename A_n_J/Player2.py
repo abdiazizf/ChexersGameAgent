@@ -4,6 +4,7 @@ from A_n_J.MonteCarlo import MonteCarlo
 from A_n_J.MCNode import MCNode
 from A_n_J.Action import Action
 from copy import deepcopy
+import random
 
 class Player:
     def __init__(self, colour):
@@ -43,12 +44,13 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(1)
-        if action:
-            if not 'action_type' in action.__dict__:
-                print(action)
+        #action = self.mcAI.best_action(1)
+        actions = self.current_state.legal_moves.actions
+        if actions:
+            action = random.choice(actions)
+            if(action.action_type == "PASS") or (action == None):
                 return ("PASS", None)
-            elif(action.action_type == "EXIT"):
+            if(action.action_type == "EXIT"):
                 return action.format_exit()
             else:    
                 return action.format_output()

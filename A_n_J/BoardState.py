@@ -110,9 +110,8 @@ class BoardState(object):
             
     def get_winner(self):
         for player in self.score:
-            if self.score[player] == 4:
+            if self.score[player]['exits'] == 4:
                 return player
-        return None
     '''
     Defines comparison of two board states
     '''
