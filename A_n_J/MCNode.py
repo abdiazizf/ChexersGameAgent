@@ -4,11 +4,11 @@ Created on May 8, 2019
 @author: Jordan
 '''
 
-import numpy as np
+
 from _collections import defaultdict
 from A_n_J.Action import Action
 import random
-from numpy.random.mtrand import choice
+import math 
 
 class MCNode(object):
     '''
@@ -37,12 +37,17 @@ class MCNode(object):
     def best_child(self, c_param = 1.4):
         choice_weights = []
         for child in self.children:
-            weight = (child.wins/(child.visits)) + c_param * np.sqrt((2 * np.log(self.visits) / (child.visits)))
+            weight = (child.wins/(child.visits)) + c_param * math.sqrt((2 * math.log(self.visits) / (child.visits)))
             choice_weights.append(weight)
+            
+        max_val = max(choice_weights)
+        index_max = choice_weights.index(max_val)
         if(choice_weights):
-            return self.children[np.argmax(choice_weights)]
+            return self.children[index_max]
         else:
             return self
+    
+    
     
     def expand(self):
         action_index = random.randint(0,len(self.untried_actions)-1)
