@@ -20,7 +20,8 @@ class MonteCarlo(object):
             v.backpropogate(simulation_result)
             
 
-        return self.initial_state.best_child(c_param = 0.).generated_by
+
+        return self.initial_state.best_child(c_param = 0.5).generated_by
 
     
     def tree_policy(self):

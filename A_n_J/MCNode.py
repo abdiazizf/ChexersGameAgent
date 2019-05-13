@@ -26,16 +26,23 @@ class MCNode(object):
         self.number_of_visits = 0
         self.results = defaultdict(int)
         
+        if(parent):
+            if 'generated_by' in parent.__dict__:
+                self.generated_by = parent.generated_by
+            else: 
+                self.generated_by = Action((0,0),(0,0),"PASS")
+        self.generated_by = None
+        
     def fully_expanded(self):
         return len(self.untried_actions) == 0
     
     def best_child(self, c_param = 1.4):
-        choices_weights = [
-            (c.wins / (c.visits)) + c_param * np.sqrt((2 * np.log(self.visits) / (c.visits)))
-            for c in self.children
-        ]
-        if(choices_weights):
-            return self.children[np.argmax(choices_weights)]
+        choice_weights = []
+        for child in self.children:
+            weight = (child.wins/(child.visits)) + c_param * np.sqrt((2 * np.log(self.visits) / (child.visits)))
+            choice_weights.append(weight)
+        if(choice_weights):
+            return self.children[np.argmax(choice_weights)]
         else:
             return self
     
@@ -45,7 +52,6 @@ class MCNode(object):
         action = self.untried_actions.pop(action_index)        
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
-        print(action,action.format_output())
         child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
         return child_state
@@ -55,6 +61,7 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
+        '''
         if(possible_moves):
             for move in possible_moves:
                 if(move.action_type == "EXIT"):
@@ -63,6 +70,8 @@ class MCNode(object):
 
         else:
             move_to_use = Action((0,0),(0,0),"PASS")
+        '''
+        move_to_use = random.choice(possible_moves)
         return move_to_use 
     
     def rollout(self):
