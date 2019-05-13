@@ -97,6 +97,10 @@ class MCNode(object):
         
         return genby
     
+    def has_children(self):
+        if self.children != []:
+            return True
+    
     @property
     def untried_actions(self):
         if not '_untried_actions' in self.__dict__:

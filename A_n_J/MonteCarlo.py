@@ -10,24 +10,28 @@ class MonteCarlo(object):
         # Takes an instance of a Board and optionally some keyword
         # arguments.  Initializes the list of game states and the
         # statistics tables.
-        self.initial_state = root
+        self.initial_node = root
     
     def best_action(self, num_simulations):
         
         for sim in range(0, num_simulations):
-            v = self.tree_policy()
-            simulation_result = v.rollout()
-            v.backpropogate(simulation_result)
-        best_choice_node = self.initial_state.best_child(c_param = 0.)
+            selected_node = self.expand_tree()
+            simulation_result = selected_node.rollout()
+            selected_node.backpropogate(simulation_result)
+        best_choice_node = self.initial_node.best_child(c_param = 0.5)
         return best_choice_node.generated_by
         
     
+    def traverse(self):
+        node = self.initial_node
+        while node.has_children() and node.untried_actions == []:
+            node = node.best_child()
+        return node
+    
     #TODO: Fix expansion of nodes, so far I don't think it goes deep enough 
-    def tree_policy(self):
-        current_state = self.initial_state
-        while current_state.is_terminal_state() == False:
-            if current_state.fully_expanded() == False:
-                return current_state.expand()
-            current_state = current_state.best_child()
-            
-        return current_state
+    def expand_tree(self):
+        current_node = self.traverse()
+        if current_node.fully_expanded() == False:
+            return current_node.expand()
+        else:
+            return current_node

@@ -43,7 +43,7 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(5000)
+        action = self.mcAI.best_action(100)
         if action:
             if not 'action_type' in action.__dict__:
                 print(action)
@@ -84,7 +84,7 @@ class Player:
         #print(self.current_state.piece_vectors)
         
         new_node = MCNode(self.current_state)
-        self.mcAI.initial_state = new_node
+        self.mcAI.initial_node = new_node
 
     
     '''
