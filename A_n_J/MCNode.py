@@ -61,7 +61,6 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
-        '''
         if(possible_moves):
             for move in possible_moves:
                 if(move.action_type == "EXIT"):
@@ -70,8 +69,6 @@ class MCNode(object):
 
         else:
             move_to_use = Action((0,0),(0,0),"PASS")
-        '''
-        move_to_use = random.choice(possible_moves)
         return move_to_use 
     
     def rollout(self):
@@ -80,7 +77,7 @@ class MCNode(object):
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
             current_state = current_state.generate_successor(action)
-        return current_state.player_colour
+        return current_state.get_winner()
                                                   
     def backpropogate(self, result):
         self.number_of_visits += 1 
