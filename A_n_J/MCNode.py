@@ -40,10 +40,13 @@ class MCNode(object):
             return self
     
     def expand(self):
-        action = random.choice(self.untried_actions)
+    
+        action_index = random.randint(0,len(self.untried_actions)-1)
+        action = self.untried_actions.pop(action_index)        
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
-        child_state.generated_by = self.generated_by(action)
+        print(action,action.format_output())
+        child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
         return child_state
     
@@ -76,12 +79,13 @@ class MCNode(object):
         if self.parent:
             self.parent.backpropogate(result)
     
-    def generated_by(self,action):
+    def get_generated_by(self,action):
         if(action == None):
-            action = Action((0,0),(0,0),"PASS")
-        if not '_generated_by' in self.__dict__:
-            self._generated_by = action
-        return self._generated_by
+            genby = Action((0,0),(0,0),"PASS")
+        else:
+            genby = action
+        
+        return genby
     
     @property
     def untried_actions(self):

@@ -43,7 +43,7 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(100)
+        action = self.mcAI.best_action(1000)
         if action:
             if not 'action_type' in action.__dict__:
                 print(action)
