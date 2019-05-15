@@ -42,13 +42,11 @@ class BoardState(object):
         new_vector['blue'] = blue
         
         if(action.action_type == "PASS"):
-            self.score[self.player_colour]["turns"] += 1
             return new_vector
         
         origin = action.origin
         destination = action.destination
         if(action.action_type == "EXIT"):
-            self.score[colour]["exits"] +=1
             new_vector[colour].remove(origin)
         elif(action.action_type == "JUMP"):
             neighbour = action.get_neighbour_space()
@@ -67,7 +65,6 @@ class BoardState(object):
         else:
             new_vector[colour].remove(origin)
             new_vector[colour].append(destination)
-        self.score[self.player_colour]["turns"] += 1
         return new_vector
         
     def update_board_state(self,action,colour,score):
@@ -90,14 +87,16 @@ class BoardState(object):
         #self.generated_by = action
         new_piece_vector = self.update_piece_positions(self.player_colour, action)
         next_player = self.player_turn_order()
-        new_state = BoardState(next_player,new_piece_vector,self.score)
+        new_score = deepcopy(self.score)
+        if(action.action_type == "EXIT"):
+            new_score[self.player_colour]['exits'] += 1
+        new_score[self.player_colour]['turns'] += 1
+        new_state = BoardState(next_player,new_piece_vector,new_score)
         
         return new_state
     
     def is_terminal_state(self):
         max_moves = 0
-        if not self.piece_vectors[self.player_colour]:
-            return True
         for player in self.score:
             if self.score[player]["exits"] == 4:
                 return True
@@ -109,9 +108,11 @@ class BoardState(object):
             return False
             
     def get_winner(self):
+        winner = None
         for player in self.score:
             if self.score[player]['exits'] == 4:
-                return player
+                winner = player
+        return winner
     '''
     Defines comparison of two board states
     '''

@@ -26,6 +26,8 @@ class MCNode(object):
         self.number_of_visits = 0
         self.results = defaultdict(int)
         self.generated_by = None
+        self.depth = 0
+        self.sdepth = str(self.depth)
         
     def fully_expanded(self):
         cur_num_action = len(self.untried_actions)
@@ -39,21 +41,28 @@ class MCNode(object):
         for child in self.children:
             weight = (child.wins/(child.visits)) + c_param * math.sqrt((2 * math.log(self.visits) / (child.visits)))
             choice_weights.append(weight)
-            
         max_val = max(choice_weights)
         index_max = choice_weights.index(max_val)
         if(choice_weights):
+            #print(self.children[index_max].generated_by.format_output(),self.children[index_max].state.piece_vectors)
             return self.children[index_max]
         else:
             return self
     
-    
+    def rand_child(self):
+        return random.choice(self.children)
     
     def expand(self):
         action_index = random.randint(0,len(self.untried_actions)-1)
         action = self.untried_actions.pop(action_index)        
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
+        
+        ### TREE TRACKING ###
+        child_state.depth = (self.depth + 1)
+        child_state.sdepth = str(child_state.depth)
+        #####################
+        
         child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
         return child_state
