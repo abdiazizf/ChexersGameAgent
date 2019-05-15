@@ -20,10 +20,6 @@ class Action(object):
     def on_board(self):
         if(self.hex_distance(self.destination, (0,0) ) > 3):
             return False
-        if (self.destination[0] < -3) or (self.destination[0] > 3):
-            return False
-        if (self.destination[1] < -3) or (self.destination[1] > 3):
-            return False
         else: 
             return True
         

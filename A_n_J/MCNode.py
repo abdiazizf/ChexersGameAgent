@@ -57,12 +57,6 @@ class MCNode(object):
         action = self.untried_actions.pop(action_index)        
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
-        
-        ### TREE TRACKING ###
-        child_state.depth = (self.depth + 1)
-        child_state.sdepth = str(child_state.depth)
-        #####################
-        
         child_state.generated_by = self.get_generated_by(action)
         self.children.append(child_state)
         return child_state

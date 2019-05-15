@@ -4,7 +4,6 @@ Created on May 7, 2019
 @author: Jordan
 '''
 
-from pptree import *
 
 class MonteCarlo(object):
     
@@ -21,7 +20,6 @@ class MonteCarlo(object):
             simulation_result = selected_node.rollout()
             selected_node.backpropogate(simulation_result)
 
-        #print_tree(self.initial_node,nameattr='sdepth')
         best_choice_node = self.initial_node.best_child(c_param = 0)
         return best_choice_node.generated_by
     

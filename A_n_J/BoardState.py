@@ -4,8 +4,6 @@ Created on Apr 28, 2019
 @author: Jordan
 '''
 from A_n_J.PossibleActions import PossibleActions
-import copy
-from copy import deepcopy
 
 class BoardState(object):
     '''
@@ -20,7 +18,12 @@ class BoardState(object):
     
     def __init__(self, player_colour,piece_vector,score):
         self.player_colour = player_colour
-        self.piece_vectors = deepcopy(piece_vector)
+        new_vector = {}
+        new_vector['red'] = piece_vector['red'][:]
+        new_vector['green'] = piece_vector['green'][:]
+        new_vector['blue'] = piece_vector['blue'][:]
+        self.piece_vectors = new_vector
+        
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self)
         self.score = score
@@ -32,14 +35,10 @@ class BoardState(object):
     '''
     def update_piece_positions(self,colour,action):
         new_vector = {}
-        
-        red = deepcopy(self.piece_vectors['red'])
-        blue = deepcopy(self.piece_vectors['blue'])
-        green = deepcopy(self.piece_vectors['green'])
-        
-        new_vector['red'] = red
-        new_vector['green'] = green
-        new_vector['blue'] = blue
+
+        new_vector['red'] = self.piece_vectors['red'][:]
+        new_vector['green'] = self.piece_vectors['green'][:]
+        new_vector['blue'] = self.piece_vectors['blue'][:]
         
         if(action.action_type == "PASS"):
             return new_vector
@@ -70,7 +69,7 @@ class BoardState(object):
     def update_board_state(self,action,colour,score):
         new_piece_vector = self.update_piece_positions(colour, action)
         next_player = self.player_turn_order()
-        new_score = deepcopy(score)
+        new_score = self.copy_score()
 
         return BoardState(next_player,new_piece_vector,new_score)
         
@@ -84,16 +83,26 @@ class BoardState(object):
     
     def generate_successor(self,action):
         
-        #self.generated_by = action
         new_piece_vector = self.update_piece_positions(self.player_colour, action)
         next_player = self.player_turn_order()
-        new_score = deepcopy(self.score)
+        new_score = self.copy_score()
         if(action.action_type == "EXIT"):
             new_score[self.player_colour]['exits'] += 1
         new_score[self.player_colour]['turns'] += 1
         new_state = BoardState(next_player,new_piece_vector,new_score)
         
         return new_state
+    
+    def copy_score(self):
+        score = {}
+        score['red'] = {}
+        score['blue'] = {}
+        score['green'] = {}
+        for player in self.score:
+            score[player]['turns'] = self.score[player]['turns']
+            score[player]['exits'] = self.score[player]['exits']
+    
+        return score
     
     def is_terminal_state(self):
         max_moves = 0
