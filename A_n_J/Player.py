@@ -84,6 +84,11 @@ class Player:
         self.current_state = self.current_state.update_board_state(new_action,colour,new_score)
         new_node = MCNode(self.current_state)
         #TODO: Traverse tree instead of recreating tree from scratch 
+        
+        for child in self.mcAI.initial_node.children:
+            if child.generated_by.compare_to(new_action) == True:
+                new_node = child
+                
         self.mcAI.initial_node = new_node
 
     

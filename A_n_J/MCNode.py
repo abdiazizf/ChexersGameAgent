@@ -36,15 +36,15 @@ class MCNode(object):
         else:
             return False 
     
-    def best_child(self, c_param = 1.4):
+    def best_child(self, c_param = 1):
         choice_weights = []
         for child in self.children:
-            weight = (child.wins/(child.visits)) + c_param * math.sqrt((2 * math.log(self.visits) / (child.visits)))
+            weight = ((child.wins/(child.visits)) + c_param * math.sqrt((2 * math.log(self.visits) / (child.visits))))
+            #print(child.wins,"/",child.visits," + ",c_param," * ",math.sqrt((2 * math.log(self.visits) / (child.visits))))
             choice_weights.append(weight)
         max_val = max(choice_weights)
         index_max = choice_weights.index(max_val)
         if(choice_weights):
-            #print(self.children[index_max].generated_by.format_output(),self.children[index_max].state.piece_vectors)
             return self.children[index_max]
         else:
             return self
@@ -110,8 +110,13 @@ class MCNode(object):
     
     @property
     def wins(self):
-        wins = self.results[self.parent.state.player_colour]
-        loses = self.results[-1 * self.parent.state.player_colour]
+        wins = 0
+        loses = 0
+        for outcome in self.results:
+            if outcome == self.parent.state.player_colour:
+                wins = self.results[outcome]
+            else:
+                loses = self.results[outcome]
         return wins-loses
     
     @property

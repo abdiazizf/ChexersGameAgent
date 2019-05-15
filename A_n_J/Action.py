@@ -75,4 +75,17 @@ class Action(object):
             return max(abs(distance_x), abs(distance_y))
     
         return
+    
+    def compare_to(self, other):
+        
+        if self.origin != other.origin:
+            return False
+        if self.destination != other.destination:
+            return False
+        if self.action_type != other.action_type:
+            return False
+        else: 
+            return True
+        
+        
         
