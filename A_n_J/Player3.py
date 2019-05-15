@@ -43,10 +43,12 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(5)
+        action = self.mcAI.best_action(2)
         if action:
             if not 'action_type' in action.__dict__:
                 print(action)
+                return ("PASS", None)
+            if action.action_type == "PASS":
                 return ("PASS", None)
             elif(action.action_type == "EXIT"):
                 return action.format_exit()
@@ -78,11 +80,16 @@ class Player:
 
         self.current_score[colour]["turns"] += 1 
         new_action = self.convert_sim_action(action)
-        self.current_state = self.current_state.update_board_state(new_action,colour,self.current_score)
-        #print(self.current_state.piece_vectors)
-        
+        new_score = deepcopy(self.current_score)
+        self.current_state = self.current_state.update_board_state(new_action,colour,new_score)
         new_node = MCNode(self.current_state)
-        self.mcAI.initial_state = new_node
+        #TODO: Traverse tree instead of recreating tree from scratch 
+        
+        for child in self.mcAI.initial_node.children:
+            if child.generated_by.compare_to(new_action) == True:
+                new_node = child
+                
+        self.mcAI.initial_node = new_node
 
     
     '''

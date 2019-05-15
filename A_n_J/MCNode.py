@@ -72,8 +72,7 @@ class MCNode(object):
     
     def rollout_policy(self, possible_moves):
         #Random policy
-        move_to_use = random.choice(possible_moves)
-        return move_to_use 
+        return random.choice(possible_moves)
     
     def rollout(self):
         current_state = self.state
