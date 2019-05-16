@@ -30,10 +30,10 @@ class Action(object):
          (  JUMP, ( (1,0) , (3,0) )  )
     '''
     def format_output(self):
-        return (self.action_type, ((self.origin), (self.destination)))
+        return (self.type, ((self.origin), (self.destination)))
     
     def format_exit(self):
-        return (self.action_type, (self.origin))
+        return (self.type, (self.origin))
        
     
     def __init__(self, origin, direction, action_type):
@@ -42,7 +42,7 @@ class Action(object):
         '''
         self.origin = origin
         self.destination = (origin[0] + direction[0],origin[1] + direction[1])
-        self.action_type = action_type
+        self.type = action_type
         
         
     def get_direction(self):
@@ -78,10 +78,11 @@ class Action(object):
             return False
         if self.destination != other.destination:
             return False
-        if self.action_type != other.action_type:
+        if self.type != other.type:
             return False
         else: 
             return True
         
+    
         
         

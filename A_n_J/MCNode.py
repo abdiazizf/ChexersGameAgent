@@ -40,7 +40,6 @@ class MCNode(object):
         choice_weights = []
         for child in self.children:
             weight = ((child.wins/(child.visits)) + c_param * math.sqrt((2 * math.log(self.visits) / (child.visits))))
-            #print(child.wins,"/",child.visits," + ",c_param," * ",math.sqrt((2 * math.log(self.visits) / (child.visits))))
             choice_weights.append(weight)
         max_val = max(choice_weights)
         index_max = choice_weights.index(max_val)
@@ -74,6 +73,7 @@ class MCNode(object):
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
             current_state = current_state.generate_successor(action)
+
         winner = current_state.get_winner()
         return winner
                                                   

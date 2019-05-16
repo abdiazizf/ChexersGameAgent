@@ -15,6 +15,7 @@ class MonteCarlo(object):
     
     def best_action(self, num_simulations):
         
+        
         for sim in range(0, num_simulations):
             selected_node = self.expand_tree()
             simulation_result = selected_node.rollout()
@@ -26,7 +27,7 @@ class MonteCarlo(object):
     def traverse(self):
         node = self.initial_node
         while node.has_children() and node.untried_actions == []:
-            node = node.best_child()
+            node = node.best_child(c_param = 0.3)
         return node
     
     #TODO: Fix expansion of nodes, so far I don't think it goes deep enough 

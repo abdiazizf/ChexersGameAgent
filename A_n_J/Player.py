@@ -4,6 +4,10 @@ from A_n_J.MonteCarlo import MonteCarlo
 from A_n_J.MCNode import MCNode
 from A_n_J.Action import Action
 from copy import deepcopy
+import random
+
+import numpy as np
+
 
 class Player:
     def __init__(self, colour):
@@ -22,13 +26,27 @@ class Player:
         initial_pieces = self.construct_piece_vectors()
         self.initial_score = self.construct_score_dict()
         self.current_score = deepcopy(self.initial_score)
-        self.initial_state = BoardState("red",initial_pieces,self.initial_score)
-        self.current_state = self.initial_state
+
+
         self.pieces_exited = 0
+
+        self.colour = colour
+        
+        # Setup board representation
+        self.board = np.array([[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])
+        i = 0
+        for player in initial_pieces:
+            for piece in player:
+                hex = self.hex_to_array(piece)
+                self.board[hex] = i
+            i+= 1 
+
+        self.initial_state = BoardState(1,initial_pieces,self.initial_score,self.board)
+        self.current_board = np.array(self.board)
+        self.current_state = BoardState(1,initial_pieces,self.initial_score,self.board)
         self.root_node = MCNode(self.initial_state)
         self.mcAI = MonteCarlo(self.root_node)
-        self.colour = colour
-
+                
     def action(self):
         """
         This method is called at the beginning of each of your turns to request 
@@ -43,14 +61,14 @@ class Player:
         # TODO: Decide what action to take.
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(36)
+        action = self.mcAI.best_action(1)
+        print(action.format_output())
         if action:
-            if not 'action_type' in action.__dict__:
-                print(action)
+            if not 'type' in action.__dict__:
                 return ("PASS", None)
-            if action.action_type == "PASS":
+            if action.type == "PASS":
                 return ("PASS", None)
-            elif(action.action_type == "EXIT"):
+            elif(action.type == "EXIT"):
                 return action.format_exit()
             else:    
                 return action.format_output()
@@ -78,10 +96,13 @@ class Player:
         """
         
 
-        self.current_score[colour]["turns"] += 1 
+        self.current_score[0] += 1 
         new_action = self.convert_sim_action(action)
-        new_score = deepcopy(self.current_score)
-        self.current_state = self.current_state.update_board_state(new_action,colour,new_score)
+        
+        print(new_action.format_output())
+        
+        new_score = self.current_score[:]
+        self.current_state = self.current_state.update_board_state(new_action,self.convert_colour(colour),new_score,self.current_board)
         new_node = MCNode(self.current_state)
         #TODO: Traverse tree instead of recreating tree from scratch 
         
@@ -96,23 +117,31 @@ class Player:
     Returns a dictionary of vectors containing the initial positions of the 
     pieces for each player on the board. Used during setup of a board_state
     '''
+        
+    def hex_to_array(self,hex):
+        return (hex[0]+3,hex[1]+3)
+    
+    def convert_colour(self,colour):
+        if colour == 'red':
+            return 1 
+        elif colour == 'green':
+            return 2
+        elif colour == 'blue':
+            return 3
+        
     def construct_piece_vectors(self):
         
-        piece_vectors = {}
-        piece_vectors["red"] = [(-3,0),(-3,1),(-3,2),(-3,3)]
-        piece_vectors["green"] = [(0,-3),(1,-3),(2,-3),(3,-3)]
-        piece_vectors["blue"] =  [(3,0),(2,1),(1,2),(0,3)]
+        piece_vectors = []
+        piece_vectors.append([])
+        piece_vectors.append([(-3,0),(-3,1),(-3,2),(-3,3)])
+        piece_vectors.append([(0,-3),(1,-3),(2,-3),(3,-3)])
+        piece_vectors.append([(3,0),(2,1),(1,2),(0,3)])
         
         return piece_vectors
         
     def construct_score_dict(self):
         
-        score = {}
-        score["red"] = {"exits": 0, "turns":0}
-        score["green"] = {"exits": 0, "turns":0}
-        score["blue"] =  {"exits": 0, "turns":0}
-        
-        return score
+        return [0,0,0,0]
         
     def convert_sim_action(self,action):
         type = action[0]
