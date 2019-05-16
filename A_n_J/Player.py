@@ -37,8 +37,7 @@ class Player:
         i = 0
         for player in initial_pieces:
             for piece in player:
-                hex = self.hex_to_array(piece)
-                self.board[hex] = i
+                self.board[piece] = i
             i+= 1 
 
         self.initial_state = BoardState(1,initial_pieces,self.initial_score,self.board)
@@ -62,7 +61,10 @@ class Player:
         
         # JUMP, MOVE, PASS, EXIT 
         action = self.mcAI.best_action(1)
-        print(action.format_output())
+        
+        #print(action.format_output())
+        #print(self.current_board)
+        #print(self.current_state.piece_vectors)
         if action:
             if not 'type' in action.__dict__:
                 return ("PASS", None)
@@ -99,9 +101,9 @@ class Player:
         self.current_score[0] += 1 
         new_action = self.convert_sim_action(action)
         
-        print(new_action.format_output())
         
         new_score = self.current_score[:]
+        self.current_board = self.current_state.board
         self.current_state = self.current_state.update_board_state(new_action,self.convert_colour(colour),new_score,self.current_board)
         new_node = MCNode(self.current_state)
         #TODO: Traverse tree instead of recreating tree from scratch 
@@ -117,10 +119,7 @@ class Player:
     Returns a dictionary of vectors containing the initial positions of the 
     pieces for each player on the board. Used during setup of a board_state
     '''
-        
-    def hex_to_array(self,hex):
-        return (hex[0]+3,hex[1]+3)
-    
+
     def convert_colour(self,colour):
         if colour == 'red':
             return 1 

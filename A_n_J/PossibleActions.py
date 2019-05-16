@@ -29,6 +29,8 @@ class PossibleActions(object):
 
 
         for piece in pieces[player_colour]:
+            
+            
             for direction in self.axial_directions:
                 self.add_action(piece, direction, board, "MOVE", player_colour)
                 self.add_action(piece, self.jump(direction), board, "JUMP", player_colour)
@@ -60,18 +62,17 @@ class PossibleActions(object):
             if action.origin not in self.exit_spaces[colour]:
                 return False
             else:
-                return True
+                return False
         # Check hex is on board
         if action.on_board() != True:
             return False
         #Check hex isn't occupied
-
-        if board[self.hex_to_array(action.destination)] != 0: 
+        if board[action.destination] != 0: 
             return False
         if move == "JUMP": 
             if not self.has_neighbour_in_jump_direction(action, board):
                 return False
-            return False
+
         return True
             
     
@@ -82,20 +83,13 @@ class PossibleActions(object):
     def has_neighbour_in_jump_direction(self,action,board):
         neighbouring_space = action.get_neighbour_space()
 
-        if board[self.hex_to_array(neighbouring_space)] == 0:
+        if board[neighbouring_space] == 0:
             return False
         else:
             return True
     
     def jump(self,direction):
         return (direction[0]*2,direction[1]*2)
-    
-    
-    def hex_to_array(self,hex):
-        return (hex[0]+3,hex[1]+3)
-    
-    def array_to_hex(self,hex):
-        return (hex[0]-3,hex[1]-3)
     
     
     '''

@@ -43,7 +43,7 @@ class BoardState(object):
             return new_vector
         if(action.type == "EXIT"):
             new_vector[colour].remove(action.origin)
-            board[action.origin] = 0
+            self.board[action.origin] = 0
         elif(action.type == "JUMP"):
             neighbour = action.get_neighbour_space()
             other_player = self.board[neighbour]
@@ -52,17 +52,19 @@ class BoardState(object):
                 if other_player != colour:
                     new_vector[other_player].remove(neighbour)
                     new_vector[colour].append(neighbour)
-                    board[neighbour] = colour
+                    self.board[neighbour] = colour
             new_vector[colour].remove(action.origin)
             new_vector[colour].append(action.destination)
-            board[action.origin] = 0
-            board[action.destination] = colour
+            self.board[action.origin] = 0
+            self.board[action.destination] = colour
             
         else:
             new_vector[colour].remove(action.origin)
             new_vector[colour].append(action.destination)
-            board[action.origin] = 0
-            board[action.destination] = colour
+            self.board[action.origin] = 0
+            self.board[action.destination] = colour
+            
+        
         return new_vector
         
         
@@ -73,8 +75,8 @@ class BoardState(object):
         new_score = self.copy_score()
         new_board = np.array(board)
         
-        new_board[self.hex_to_array(action.origin)] = 0
-        new_board[self.hex_to_array(action.destination)] = colour
+        new_board[action.origin] = 0
+        new_board[action.destination] = colour
 
         return BoardState(next_player,new_piece_vector,new_score,new_board)
         
@@ -91,6 +93,9 @@ class BoardState(object):
         new_piece_vector = self.update_piece_positions(self.player_colour, action,self.board)
         next_player = self.player_turn_order()
         new_score = self.copy_score()
+        
+        
+        
         if(action.type == "EXIT"):
             new_score[self.player_colour] += 1
         new_score[0] += 1
@@ -124,13 +129,7 @@ class BoardState(object):
             winner = 3
         return winner
     
-    def array_to_hex(self,hex):
-        return (hex[0]-3,hex[1]-3)
-    
-    def hex_to_array(self,hex):
-        return (hex[0]-3,hex[1]-3)
-    
-    
+
     '''
     Defines comparison of two board states
     '''
