@@ -64,7 +64,8 @@ class Player:
         
         #print(action.format_output())
         #print(self.current_board)
-        #print(self.current_state.piece_vectors)
+        print(self.current_state.piece_vectors)
+        print(self.current_board)
         if action:
             if not 'type' in action.__dict__:
                 return ("PASS", None)

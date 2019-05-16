@@ -36,41 +36,35 @@ class BoardState(object):
     '''
     def update_piece_positions(self,colour,action,board):
 
-        new_vector = [x[:] for x in self.piece_vectors]
-        
+        new_vector = [row[:] for row in self.piece_vectors]
 
         if(action.type == "PASS"):
             return new_vector
         if(action.type == "EXIT"):
             new_vector[colour].remove(action.origin)
             self.board[action.origin] = 0
-        elif(action.type == "JUMP"):
-            neighbour = action.get_neighbour_space()
-            other_player = self.board[neighbour]
-
-            if other_player != 0:
-                if other_player != colour:
+            return new_vector
+        else: 
+            new_vector[colour].remove(action.origin)
+            new_vector[colour].append(action.destination)
+            self.board[action.origin] = 0
+            self.board[action.destination] = colour
+            if(action.type == "JUMP"):
+                #Check if another player was captured
+                neighbour = action.get_neighbour_space()
+                other_player = self.board[neighbour]
+                if self.board[neighbour] != 0 and self.board[neighbour] != colour:
+                    
                     new_vector[other_player].remove(neighbour)
                     new_vector[colour].append(neighbour)
-                    self.board[neighbour] = colour
-            new_vector[colour].remove(action.origin)
-            new_vector[colour].append(action.destination)
-            self.board[action.origin] = 0
-            self.board[action.destination] = colour
-            
-        else:
-            new_vector[colour].remove(action.origin)
-            new_vector[colour].append(action.destination)
-            self.board[action.origin] = 0
-            self.board[action.destination] = colour
-            
+                    self.board[neighbour] = 0
         
         return new_vector
         
         
     def update_board_state(self,action,colour,score,board):
         
-        new_piece_vector = self.update_piece_positions(colour, action,board)
+        new_piece_vector = self.update_piece_positions(colour, action, board)
         next_player = self.player_turn_order()
         new_score = self.copy_score()
         new_board = np.array(board)
