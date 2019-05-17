@@ -25,7 +25,7 @@ class Player:
         
         initial_pieces = self.construct_piece_vectors()
         self.initial_score = self.construct_score_dict()
-        self.current_score = deepcopy(self.initial_score)
+        self.current_score = self.initial_score[:]
 
 
         self.pieces_exited = 0
@@ -45,6 +45,7 @@ class Player:
         self.current_state = BoardState(1,initial_pieces,self.initial_score,self.board)
         self.root_node = MCNode(self.initial_state)
         self.mcAI = MonteCarlo(self.root_node)
+
                 
     def action(self):
         """
@@ -57,16 +58,10 @@ class Player:
         must be represented based on the above instructions for representing 
         actions.
         """
-        # TODO: Decide what action to take.
+
         
         # JUMP, MOVE, PASS, EXIT 
         action = self.mcAI.best_action(1)
-        
-        #print(action.format_output())
-        #print(self.current_board)
-        #print(self.current_state.piece_vectors)
-        print(self.current_state.piece_vectors)
-        print(self.current_board)
         if action:
             if not 'type' in action.__dict__:
                 return ("PASS", None)
@@ -99,17 +94,16 @@ class Player:
         the action/pass against the game rules).
         """
         
-
-        self.current_score[0] += 1 
+        new_score = self.current_score[:]
+        new_score[0] += 1 
         new_action = self.convert_sim_action(action)
         
+        self.current_state.validate_board()
         
-        new_score = self.current_score[:]
-        self.current_board = self.current_state.board
-        self.current_state = self.current_state.update_board_state(new_action,self.convert_colour(colour),new_score,self.current_board)
+        self.current_state = self.current_state.update_game_state(new_action,self.convert_colour(colour),new_score,self.current_state.board)
+        
+        #Update new root node in tree
         new_node = MCNode(self.current_state)
-        #TODO: Traverse tree instead of recreating tree from scratch 
-        
         for child in self.mcAI.initial_node.children:
             if child.generated_by.compare_to(new_action) == True:
                 new_node = child

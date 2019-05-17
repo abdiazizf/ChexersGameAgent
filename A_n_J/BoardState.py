@@ -32,48 +32,116 @@ class BoardState(object):
         
     '''
     Takes an action and player colour as input, returns a new piece vector that
-    represents the move taken by that player
+    represents the move taken by that player 
     '''
     def update_piece_positions(self,colour,action,board):
-
+        
         new_vector = [row[:] for row in self.piece_vectors]
 
         if(action.type == "PASS"):
             return new_vector
-        if(action.type == "EXIT"):
+        elif(action.type == "EXIT"):
             new_vector[colour].remove(action.origin)
-            self.board[action.origin] = 0
+            board[action.origin] = 0
             return new_vector
-        else: 
-            new_vector[colour].remove(action.origin)
-            new_vector[colour].append(action.destination)
-            self.board[action.origin] = 0
-            self.board[action.destination] = colour
-            if(action.type == "JUMP"):
-                #Check if another player was captured
-                neighbour = action.get_neighbour_space()
-                other_player = self.board[neighbour]
-                if self.board[neighbour] != 0 and self.board[neighbour] != colour:
-                    
-                    new_vector[other_player].remove(neighbour)
-                    new_vector[colour].append(neighbour)
-                    self.board[neighbour] = 0
+        elif(action.type == "JUMP"):
+            #Check if another player was captured
+            neighbour = action.get_neighbour_space()
+            other_player = self.board[neighbour]
+            
+            
+            #^ FINE 
+            
+            if board[neighbour] != 0 and board[neighbour] != colour:
+                if neighbour not in new_vector[other_player]:
+                    print(neighbour,other_player,colour,action.format_output(),new_vector)
+                    print(board)
+                new_vector[other_player].remove(neighbour)
+                new_vector[colour].append(neighbour)
+                board[neighbour] = colour
+        
+        new_vector[colour].remove(action.origin)
+        new_vector[colour].append(action.destination)
+        
+        board[action.origin] = 0
+        board[action.destination] = colour
         
         return new_vector
         
+    def update_game_state(self,action,colour,score,board):
         
-    def update_board_state(self,action,colour,score,board):
+        # Needs to 
+        # Reconfigure piece positions 
+        #Change board entries
+        # add to score
+        # change turn order
+        # return the new state 
         
-        new_piece_vector = self.update_piece_positions(colour, action, board)
+        new_piece_vector = self.update_piece_positions(colour, action, self.board)
         next_player = self.player_turn_order()
-        new_score = self.copy_score()
+        new_score = score[:]
         new_board = np.array(board)
-        
         new_board[action.origin] = 0
         new_board[action.destination] = colour
 
         return BoardState(next_player,new_piece_vector,new_score,new_board)
         
+    
+    def generate_successor(self,action):
+
+        new_board = np.array(self.board)
+        new_piece_vector = self.update_piece_positions(self.player_colour, action,new_board)
+        next_player = self.player_turn_order()
+        new_score = self.score[:]
+
+        if(action.type == "EXIT"):
+            new_score[self.player_colour] += 1
+        new_score[0] += 1
+        
+        new_state = BoardState(next_player,new_piece_vector,new_score,new_board)
+
+        
+        return new_state
+    
+    def do_update(self,colour,action,board):
+        new_vector = self.piece_vectors
+
+        if(action.type == "PASS"):
+            return new_vector
+        elif(action.type == "EXIT"):
+            new_vector[colour].remove(action.origin)
+            board[action.origin] = 0
+            return new_vector
+        elif(action.type == "JUMP"):
+            #Check if another player was captured
+            neighbour = action.get_neighbour_space()
+            other_player = self.board[neighbour]
+            if board[neighbour] != 0 and board[neighbour] != colour:
+                if neighbour not in new_vector[other_player]:
+                    print(neighbour,other_player,colour,action.format_output(),new_vector)
+                    print(board)
+                new_vector[other_player].remove(neighbour)
+                new_vector[colour].append(neighbour)
+                board[neighbour] = colour
+        
+        new_vector[colour].remove(action.origin)
+        new_vector[colour].append(action.destination)
+        
+        board[action.origin] = 0
+        board[action.destination] = colour
+    
+    
+    def do_move(self,action):
+        self.do_update(self.player_colour, action, self.board)
+        if(action.type == "EXIT"):
+            self.score[self.player_colour] += 1
+        self.score[0] += 1
+        self.player_colour = self.player_turn_order()
+        self.legal_moves.actions = []
+        self.legal_moves.generate_actions(self.player_colour, self.piece_vectors, self.board)
+    
+    
+    
     def player_turn_order(self):
         if (self.player_colour == 1):
             return 2
@@ -82,22 +150,16 @@ class BoardState(object):
         else:
             return 1
     
-    def generate_successor(self,action):
-
-        new_piece_vector = self.update_piece_positions(self.player_colour, action,self.board)
-        next_player = self.player_turn_order()
-        new_score = self.copy_score()
-        
-        
-        
-        if(action.type == "EXIT"):
-            new_score[self.player_colour] += 1
-        new_score[0] += 1
-        new_state = BoardState(next_player,new_piece_vector,new_score,self.board)
-
-        
-        return new_state
-    
+    def validate_board(self):
+        p = 0
+        for player in self.piece_vectors:
+            for piece in player:
+                if self.board[piece] == 0:
+                    return False
+                if self.board[piece] != p:
+                    print("INVALID BOARD",piece,p)
+                    return False
+            p += 1 
     def copy_score(self):
 
         return self.score[:]

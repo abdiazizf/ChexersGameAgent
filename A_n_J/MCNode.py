@@ -9,6 +9,7 @@ from _collections import defaultdict
 from A_n_J.Action import Action
 import random
 import math 
+from copy import deepcopy
 
 class MCNode(object):
     '''
@@ -52,8 +53,11 @@ class MCNode(object):
         return random.choice(self.children)
     
     def expand(self):
+        # Choose an unexpanded action
         action_index = random.randint(0,len(self.untried_actions)-1)
-        action = self.untried_actions.pop(action_index)        
+        action = self.untried_actions.pop(action_index)  
+              
+        # Create a new state from action and form a new node for it
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)
         child_state.generated_by = self.get_generated_by(action)
@@ -68,12 +72,11 @@ class MCNode(object):
         return random.choice(possible_moves)
     
     def rollout(self):
-        current_state = self.state
+        current_state = deepcopy(self.state)
         while current_state.is_terminal_state() != True:
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
-            current_state = current_state.generate_successor(action)
-
+            current_state.do_move(action)
         winner = current_state.get_winner()
         return winner
                                                   
