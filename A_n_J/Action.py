@@ -43,6 +43,8 @@ class Action(object):
         self.origin = origin
         self.destination = (origin[0] + direction[0],origin[1] + direction[1])
         self.type = action_type
+        #if action_type == "JUMP":
+        #    self.dir = direction
 
         
         

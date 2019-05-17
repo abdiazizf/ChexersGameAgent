@@ -46,14 +46,8 @@ class BoardState(object):
             #Check if another player was captured
             neighbour = action.get_neighbour_space()
             other_player = self.board[neighbour]
-            
-            
-            #^ FINE 
-            
+    
             if board[neighbour] != 0 and board[neighbour] != colour:
-                if neighbour not in new_vector[other_player]:
-                    print(neighbour,other_player,colour,action.format_output(),new_vector)
-                    print(board)
                 new_vector[other_player].remove(neighbour)
                 new_vector[colour].append(neighbour)
                 board[neighbour] = colour
@@ -79,8 +73,6 @@ class BoardState(object):
         next_player = self.player_turn_order()
         new_score = score[:]
         new_board = np.array(board)
-        new_board[action.origin] = 0
-        new_board[action.destination] = colour
 
         return BoardState(next_player,new_piece_vector,new_score,new_board)
         
@@ -103,12 +95,11 @@ class BoardState(object):
     
     def do_update(self,colour,action,board):
         new_vector = self.piece_vectors
-
         if(action.type == "PASS"):
             return new_vector
         elif(action.type == "EXIT"):
-            new_vector[colour].remove(action.origin)
             board[action.origin] = 0
+            new_vector[colour].remove(action.origin)
             return new_vector
         elif(action.type == "JUMP"):
             #Check if another player was captured
@@ -160,7 +151,7 @@ class BoardState(object):
         return self.score[:]
     
     def is_terminal_state(self):
-        if self.score[0] == 100:
+        if self.score[0] == 756:
             return True
         if self.score[1] == 4:
             return True

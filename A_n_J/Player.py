@@ -58,15 +58,15 @@ class Player:
         must be represented based on the above instructions for representing 
         actions.
         """
-        pr = cProfile.Profile()
-        pr.enable()
+        #pr = cProfile.Profile()
+        #pr.enable()
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(30)
+        action = self.mcAI.best_action(50)
  
-        pr.disable()
+        #pr.disable()
  
-        pr.print_stats(sort='cumtime')
+        #pr.print_stats(sort='cumtime')
         
         if action:
             if not 'type' in action.__dict__:
@@ -104,10 +104,9 @@ class Player:
         new_score[0] += 1 
         new_action = self.convert_sim_action(action)
         
-        self.current_state.validate_board()
+        
         
         self.current_state = self.current_state.update_game_state(new_action,self.convert_colour(colour),new_score,self.current_state.board)
-        
         #Update new root node in tree
         new_node = MCNode(self.current_state)
         for child in self.mcAI.initial_node.children:
@@ -115,7 +114,6 @@ class Player:
                 new_node = child
                 
         self.mcAI.initial_node = new_node
-
     
     '''
     Returns a dictionary of vectors containing the initial positions of the 

@@ -27,7 +27,7 @@ class MonteCarlo(object):
     def traverse(self):
         node = self.initial_node
         while node.has_children() and node.untried_actions == []:
-            node = node.best_child(c_param = 0.3)
+            node = node.best_child(c_param = 1)
         return node
     
     def expand_tree(self):

@@ -38,8 +38,7 @@ class PossibleActions(object):
         self.actions.extend(exits)
         
         if len(self.actions) == 0:
-            self.actions.append(Action((0,0),(0,0),"PASS"))
-
+            self.actions.append(Action((2,2),(2,2),"PASS"))
             
     def exits(self,piece,colour):
         if piece in self.exit_spaces[colour]:
