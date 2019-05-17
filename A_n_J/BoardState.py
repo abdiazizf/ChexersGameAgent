@@ -17,6 +17,7 @@ class BoardState(object):
     
     '''
     
+    
     def __init__(self, player_colour,piece_vector,score,board):
         self.player_colour = player_colour
         new_vector = piece_vector[:]
@@ -27,7 +28,6 @@ class BoardState(object):
         self.legal_moves.generate_actions(player_colour,self.piece_vectors,self.board)
         
         self.score = score
-        self.players_max_move = 0
         
         
     '''

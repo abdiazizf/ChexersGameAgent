@@ -3,10 +3,10 @@ from A_n_J.BoardState import BoardState
 from A_n_J.MonteCarlo import MonteCarlo
 from A_n_J.MCNode import MCNode
 from A_n_J.Action import Action
-from copy import deepcopy
-import random
+
 
 import numpy as np
+import cProfile 
 
 
 class Player:
@@ -58,10 +58,16 @@ class Player:
         must be represented based on the above instructions for representing 
         actions.
         """
-
+        pr = cProfile.Profile()
+        pr.enable()
         
         # JUMP, MOVE, PASS, EXIT 
         action = self.mcAI.best_action(1)
+ 
+        pr.disable()
+ 
+        pr.print_stats(sort='cumtime')
+        
         if action:
             if not 'type' in action.__dict__:
                 return ("PASS", None)

@@ -6,6 +6,8 @@ Created on Apr 30, 2019
 
 from A_n_J.Action import Action
 
+
+
 class PossibleActions(object):
     '''
     Holds a list of possible actions for the current board state
@@ -15,9 +17,9 @@ class PossibleActions(object):
     
     '''
     #possible axial directions
-    axial_directions = [(1, 0), (1, -1), (0, -1), (-1, 0), (-1, 1), (0, 1)]
+    axial_directions = set([(1, 0), (1, -1), (0, -1), (-1, 0), (-1, 1), (0, 1)])
     # off board co-ordinates for generating valid exit moves
-    exit_spaces = {1: [(3, -3), (3,-2) , (3,-1) , (3, 0)] , 3:[(0, -3), (-1,-2) , (-2,-1) , (-3, 0)] , 2:[(-3, 3), (-2, 3) , (-1, 3) , (0, 3)]}
+    exit_spaces = {1: set([(3, -3), (3,-2) , (3,-1) , (3, 0)]) , 3:set([(0, -3), (-1,-2) , (-2,-1) , (-3, 0)]) , 2:set([(-3, 3), (-2, 3) , (-1, 3) , (0, 3)])}
     
     #board_coords = {(0,-3): 0, (1,-3):1, (2,-3):2, (3,-3):3, (-1,-2):4, (0,-2):5, (2,-3):2,}
     
@@ -27,9 +29,7 @@ class PossibleActions(object):
     '''
     def generate_actions(self,player_colour,pieces,board):
 
-
         for piece in pieces[player_colour]:
-            
             for direction in self.axial_directions:
                 self.add_action(piece, direction, board, "MOVE", player_colour)
                 self.add_action(piece, self.jump(direction), board, "JUMP", player_colour)

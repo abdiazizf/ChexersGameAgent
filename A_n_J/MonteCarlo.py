@@ -30,7 +30,6 @@ class MonteCarlo(object):
             node = node.best_child(c_param = 0.3)
         return node
     
-    #TODO: Fix expansion of nodes, so far I don't think it goes deep enough 
     def expand_tree(self):
         current_node = self.traverse()
         if current_node.fully_expanded() == False:
