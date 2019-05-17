@@ -62,7 +62,7 @@ class Player:
         pr.enable()
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(1)
+        action = self.mcAI.best_action(30)
  
         pr.disable()
  
@@ -138,6 +138,7 @@ class Player:
         piece_vectors.append([(0,-3),(1,-3),(2,-3),(3,-3)])
         piece_vectors.append([(3,0),(2,1),(1,2),(0,3)])
         
+         
         return piece_vectors
         
     def construct_score_dict(self):

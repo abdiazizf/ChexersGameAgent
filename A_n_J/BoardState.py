@@ -26,7 +26,6 @@ class BoardState(object):
 
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self.piece_vectors,self.board)
-        
         self.score = score
         
         
@@ -35,7 +34,6 @@ class BoardState(object):
     represents the move taken by that player 
     '''
     def update_piece_positions(self,colour,action,board):
-        
         new_vector = [row[:] for row in self.piece_vectors]
 
         if(action.type == "PASS"):
@@ -117,9 +115,6 @@ class BoardState(object):
             neighbour = action.get_neighbour_space()
             other_player = self.board[neighbour]
             if board[neighbour] != 0 and board[neighbour] != colour:
-                if neighbour not in new_vector[other_player]:
-                    print(neighbour,other_player,colour,action.format_output(),new_vector)
-                    print(board)
                 new_vector[other_player].remove(neighbour)
                 new_vector[colour].append(neighbour)
                 board[neighbour] = colour
@@ -165,7 +160,7 @@ class BoardState(object):
         return self.score[:]
     
     def is_terminal_state(self):
-        if self.score[0] == 756:
+        if self.score[0] == 100:
             return True
         if self.score[1] == 4:
             return True

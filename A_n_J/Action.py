@@ -43,6 +43,7 @@ class Action(object):
         self.origin = origin
         self.destination = (origin[0] + direction[0],origin[1] + direction[1])
         self.type = action_type
+
         
         
     def get_direction(self):
@@ -50,7 +51,7 @@ class Action(object):
         
     def get_neighbour_space(self):
         direction = self.get_direction()
-        return ( int((self.origin[0])) + int((direction[0]/2)) , int((self.origin[1])) + int((direction[1]/2)) )
+        return ( (self.origin[0]) + int((direction[0]/2)) , (self.origin[1]) + int((direction[1]/2)) )
     '''
     Returns true if both numbers share the same sign, ie + or - 
     '''

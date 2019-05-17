@@ -56,7 +56,6 @@ class MCNode(object):
         # Choose an unexpanded action
         action_index = random.randint(0,len(self.untried_actions)-1)
         action = self.untried_actions.pop(action_index)  
-              
         # Create a new state from action and form a new node for it
         next_state = self.state.generate_successor(action)
         child_state = MCNode(next_state, parent=self)

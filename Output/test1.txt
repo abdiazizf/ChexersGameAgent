@@ -20,348 +20,321 @@ run `python -m referee --help` for additional usage information.
 * ** game start **
 * displaying game info:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |  G  |  G  |  G  |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |     |     |     |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |     |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |     |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |  R  |     |     |     |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |  B  |
-*            '-._.-'-._.-'-._.-'-._.-'
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |   G   |   G   |
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |   R   |       |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*           |   R   |       |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   R   |       |       |   B   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
 * ** red player's turn **
 * asking red player for next action...
-         301313 function calls (301126 primitive calls) in 0.153 seconds
+         323434 function calls (317802 primitive calls) in 0.286 seconds
 
    Ordered by: cumulative time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000    0.153    0.153 MonteCarlo.py:16(best_action)
-        1    0.002    0.002    0.153    0.153 MCNode.py:74(rollout)
-      728    0.001    0.000    0.148    0.000 BoardState.py:134(do_move)
-      729    0.015    0.000    0.145    0.000 PossibleActions.py:30(generate_actions)
-    29309    0.024    0.000    0.126    0.000 PossibleActions.py:50(add_action)
-    29309    0.021    0.000    0.086    0.000 PossibleActions.py:61(valid_action)
-    29232    0.011    0.000    0.048    0.000 Action.py:20(on_board)
-    29232    0.024    0.000    0.037    0.000 Action.py:64(hex_distance)
-     6646    0.005    0.000    0.017    0.000 PossibleActions.py:83(has_neighbour_in_jump_direction)
-    29450    0.015    0.000    0.015    0.000 Action.py:39(__init__)
-     6729    0.009    0.000    0.012    0.000 Action.py:51(get_neighbour_space)
-    29232    0.005    0.000    0.005    0.000 Action.py:57(same_sign)
-    19233    0.004    0.000    0.004    0.000 {built-in method builtins.max}
-    14616    0.004    0.000    0.004    0.000 PossibleActions.py:91(jump)
-    48464    0.004    0.000    0.004    0.000 {built-in method builtins.abs}
-     6729    0.003    0.000    0.003    0.000 Action.py:48(get_direction)
-      728    0.000    0.000    0.002    0.000 MCNode.py:70(rollout_policy)
-      728    0.001    0.000    0.002    0.000 random.py:256(choice)
-      728    0.001    0.000    0.001    0.000 BoardState.py:106(do_update)
-      729    0.001    0.000    0.001    0.000 random.py:224(_randbelow)
-    11443    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
-    165/1    0.000    0.000    0.000    0.000 copy.py:132(deepcopy)
-     10/1    0.000    0.000    0.000    0.000 copy.py:268(_reconstruct)
-     10/1    0.000    0.000    0.000    0.000 copy.py:236(_deepcopy_dict)
-      729    0.000    0.000    0.000    0.000 BoardState.py:167(is_terminal_state)
-      7/3    0.000    0.000    0.000    0.000 copy.py:210(_deepcopy_list)
-        1    0.000    0.000    0.000    0.000 MonteCarlo.py:33(expand_tree)
-        1    0.000    0.000    0.000    0.000 MCNode.py:55(expand)
-     1165    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
-        1    0.000    0.000    0.000    0.000 BoardState.py:90(generate_successor)
-        1    0.000    0.000    0.000    0.000 BoardState.py:21(__init__)
-      729    0.000    0.000    0.000    0.000 BoardState.py:145(player_turn_order)
-      629    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
-       28    0.000    0.000    0.000    0.000 copy.py:219(_deepcopy_tuple)
-     1459    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-      729    0.000    0.000    0.000    0.000 PossibleActions.py:101(get_actions)
-      729    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
-       28    0.000    0.000    0.000    0.000 copy.py:220(<listcomp>)
-      340    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
-      249    0.000    0.000    0.000    0.000 {built-in method builtins.id}
-       20    0.000    0.000    0.000    0.000 copy.py:273(<genexpr>)
-       10    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
-        1    0.000    0.000    0.000    0.000 MCNode.py:40(best_child)
-       28    0.000    0.000    0.000    0.000 copy.py:252(_keep_alive)
-       10    0.000    0.000    0.000    0.000 copyreg.py:87(__newobj__)
+        1    0.000    0.000    0.286    0.286 MonteCarlo.py:16(best_action)
+       30    0.007    0.000    0.282    0.009 MCNode.py:73(rollout)
+     2948    0.006    0.000    0.252    0.000 BoardState.py:129(do_move)
+     2978    0.005    0.000    0.240    0.000 PossibleActions.py:33(generate_actions)
+     2978    0.038    0.000    0.228    0.000 PossibleActions.py:35(<listcomp>)
+   119525    0.141    0.000    0.190    0.000 PossibleActions.py:48(_actions)
+    98359    0.049    0.000    0.049    0.000 Action.py:39(__init__)
+  4950/30    0.006    0.000    0.013    0.000 copy.py:132(deepcopy)
+   300/30    0.001    0.000    0.013    0.000 copy.py:268(_reconstruct)
+   300/30    0.001    0.000    0.012    0.000 copy.py:236(_deepcopy_dict)
+   210/90    0.001    0.000    0.011    0.000 copy.py:210(_deepcopy_list)
+     2948    0.001    0.000    0.007    0.000 MCNode.py:69(rollout_policy)
+     2948    0.005    0.000    0.007    0.000 BoardState.py:104(do_update)
+     2978    0.003    0.000    0.006    0.000 PossibleActions.py:36(<listcomp>)
+     2948    0.002    0.000    0.006    0.000 random.py:256(choice)
+     2978    0.003    0.000    0.004    0.000 random.py:224(_randbelow)
+      840    0.001    0.000    0.004    0.000 copy.py:219(_deepcopy_tuple)
+       30    0.000    0.000    0.004    0.000 MonteCarlo.py:33(expand_tree)
+    11914    0.003    0.000    0.003    0.000 PossibleActions.py:44(exits)
+       30    0.000    0.000    0.003    0.000 MCNode.py:55(expand)
+      840    0.000    0.000    0.003    0.000 copy.py:220(<listcomp>)
+       30    0.000    0.000    0.002    0.000 BoardState.py:88(generate_successor)
+       30    0.000    0.000    0.002    0.000 BoardState.py:21(__init__)
+     2978    0.002    0.000    0.002    0.000 BoardState.py:162(is_terminal_state)
+    10200    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+      529    0.001    0.000    0.001    0.000 Action.py:52(get_neighbour_space)
+     4582    0.001    0.000    0.001    0.000 {method 'getrandbits' of '_random.Random' objects}
+       30    0.000    0.000    0.001    0.000 MonteCarlo.py:27(traverse)
+     3186    0.001    0.000    0.001    0.000 {method 'remove' of 'list' objects}
+     2978    0.001    0.000    0.001    0.000 BoardState.py:140(player_turn_order)
+       23    0.000    0.000    0.001    0.000 MCNode.py:40(best_child)
+     7470    0.001    0.000    0.001    0.000 {built-in method builtins.id}
+      840    0.000    0.000    0.001    0.000 copy.py:252(_keep_alive)
+      600    0.000    0.000    0.001    0.000 copy.py:273(<genexpr>)
+     5986    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+     5050    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+     2957    0.000    0.000    0.000    0.000 PossibleActions.py:121(get_actions)
+     2978    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+      529    0.000    0.000    0.000    0.000 Action.py:49(get_direction)
+     2978    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+     3270    0.000    0.000    0.000    0.000 copy.py:190(_deepcopy_atomic)
+      300    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
+      300    0.000    0.000    0.000    0.000 copyreg.py:87(__newobj__)
+       30    0.000    0.000    0.000    0.000 BoardState.py:36(update_piece_positions)
+       60    0.000    0.000    0.000    0.000 {built-in method numpy.array}
+    82/30    0.000    0.000    0.000    0.000 MCNode.py:82(backpropogate)
+      630    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      184    0.000    0.000    0.000    0.000 MCNode.py:106(wins)
+       30    0.000    0.000    0.000    0.000 random.py:218(randint)
+      300    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+      600    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       30    0.000    0.000    0.000    0.000 MCNode.py:20(__init__)
+       30    0.000    0.000    0.000    0.000 random.py:174(randrange)
+      303    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      133    0.000    0.000    0.000    0.000 MCNode.py:100(untried_actions)
+      552    0.000    0.000    0.000    0.000 MCNode.py:117(visits)
+      300    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x72691320}
+      184    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+      184    0.000    0.000    0.000    0.000 {built-in method math.log}
+       30    0.000    0.000    0.000    0.000 {method '__deepcopy__' of 'numpy.ndarray' objects}
+       30    0.000    0.000    0.000    0.000 MCNode.py:33(fully_expanded)
+      330    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       30    0.000    0.000    0.000    0.000 BoardState.py:37(<listcomp>)
+      300    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       23    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       30    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       52    0.000    0.000    0.000    0.000 MCNode.py:96(has_children)
+       30    0.000    0.000    0.000    0.000 BoardState.py:173(get_winner)
         3    0.000    0.000    0.000    0.000 copyreg.py:96(_slotnames)
-        1    0.000    0.000    0.000    0.000 random.py:218(randint)
-        1    0.000    0.000    0.000    0.000 random.py:174(randrange)
-      109    0.000    0.000    0.000    0.000 copy.py:190(_deepcopy_atomic)
-        1    0.000    0.000    0.000    0.000 BoardState.py:37(update_piece_positions)
-        1    0.000    0.000    0.000    0.000 MCNode.py:33(fully_expanded)
-        2    0.000    0.000    0.000    0.000 {built-in method numpy.array}
-        1    0.000    0.000    0.000    0.000 {method '__deepcopy__' of 'numpy.ndarray' objects}
-      2/1    0.000    0.000    0.000    0.000 MCNode.py:83(backpropogate)
-       13    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-       21    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
-       20    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-        3    0.000    0.000    0.000    0.000 MCNode.py:101(untried_actions)
-        1    0.000    0.000    0.000    0.000 MCNode.py:20(__init__)
-        1    0.000    0.000    0.000    0.000 MonteCarlo.py:27(traverse)
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
-       10    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
-       11    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
-        1    0.000    0.000    0.000    0.000 BoardState.py:39(<listcomp>)
-        1    0.000    0.000    0.000    0.000 MCNode.py:107(wins)
-        1    0.000    0.000    0.000    0.000 {built-in method math.log}
+       23    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
+       30    0.000    0.000    0.000    0.000 MCNode.py:88(get_generated_by)
+       30    0.000    0.000    0.000    0.000 PossibleActions.py:124(__init__)
         3    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
-       10    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-       10    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x72691320}
-        1    0.000    0.000    0.000    0.000 MCNode.py:97(has_children)
-        1    0.000    0.000    0.000    0.000 BoardState.py:178(get_winner)
-        3    0.000    0.000    0.000    0.000 MCNode.py:118(visits)
-        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 PossibleActions.py:104(__init__)
-        1    0.000    0.000    0.000    0.000 MCNode.py:89(get_generated_by)
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 
 
-*   red player returned action: ('MOVE', ((-3, 2), (-2, 1)))
-*   time:  + 0.172s  (just elapsed)    0.172s  (game total)
+*   red player returned action: ('MOVE', ((-3, 0), (-2, 0)))
+*   time:  + 0.297s  (just elapsed)    0.297s  (game total)
 * displaying game info:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |  G  |  G  |  G  |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |     |     |     |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |     |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |  R  |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |     |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |  B  |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
-*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
-* updating green player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |   G   |   G   |   G   |
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |       |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |       |   R   |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*           |   R   |       |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   R   |       |       |   B   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('MOVE', ((-3, 0), (-2, 0)))...
+*   time:  + 0.000s  (just elapsed)    0.297s  (game total)
+* updating green player with red's action ('MOVE', ((-3, 0), (-2, 0)))...
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
-* updating blue player with red's action ('MOVE', ((-3, 2), (-2, 1)))...
+* updating blue player with red's action ('MOVE', ((-3, 0), (-2, 0)))...
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * ** green player's turn **
 * asking green player for next action...
-*   green player returned action: ('MOVE', ((1, -3), (1, -2)))
-*   time:  + 0.062s  (just elapsed)    0.062s  (game total)
+*   green player returned action: ('MOVE', ((1, -3), (0, -2)))
+*   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * displaying game info:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |     |  G  |  G  |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |  G  |     |     |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |     |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |  R  |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |     |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |  B  |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with green's action ('MOVE', ((1, -3), (1, -2)))...
-*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
-* updating green player with green's action ('MOVE', ((1, -3), (1, -2)))...
-*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
-* updating blue player with green's action ('MOVE', ((1, -3), (1, -2)))...
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |   G   |   G   |
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |       |   R   |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*           |   R   |       |       |       |   B   |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   R   |       |       |   B   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with green's action ('MOVE', ((1, -3), (0, -2)))...
+*   time:  + 0.000s  (just elapsed)    0.297s  (game total)
+* updating green player with green's action ('MOVE', ((1, -3), (0, -2)))...
+*   time:  + 0.000s  (just elapsed)    0.000s  (game total)
+* updating blue player with green's action ('MOVE', ((1, -3), (0, -2)))...
 *   time:  + 0.000s  (just elapsed)    0.000s  (game total)
 * ** blue player's turn **
 * asking blue player for next action...
-*   blue player returned action: ('MOVE', ((0, 3), (0, 2)))
-*   time:  + 0.047s  (just elapsed)    0.047s  (game total)
+*   blue player returned action: ('MOVE', ((1, 2), (0, 2)))
+*   time:  + 0.016s  (just elapsed)    0.016s  (game total)
 * displaying game info:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |     |  G  |  G  |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |  G  |     |     |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |     |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |  R  |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |  B  |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |     |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with blue's action ('MOVE', ((0, 3), (0, 2)))...
-*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
-* updating green player with blue's action ('MOVE', ((0, 3), (0, 2)))...
-*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
-* updating blue player with blue's action ('MOVE', ((0, 3), (0, 2)))...
-*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |   G   |   G   |
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*       |       |       |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |       |   R   |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*       |   R   |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*           |   R   |       |       |   B   |       |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   R   |       |       |   B   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with blue's action ('MOVE', ((1, 2), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    0.297s  (game total)
+* updating green player with blue's action ('MOVE', ((1, 2), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    0.000s  (game total)
+* updating blue player with blue's action ('MOVE', ((1, 2), (0, 2)))...
+*   time:  + 0.000s  (just elapsed)    0.016s  (game total)
 * ** red player's turn **
 * asking red player for next action...
-         155408 function calls (155131 primitive calls) in 0.080 seconds
+         338243 function calls (329931 primitive calls) in 0.284 seconds
 
    Ordered by: cumulative time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000    0.080    0.080 MonteCarlo.py:16(best_action)
-        1    0.001    0.001    0.079    0.079 MCNode.py:74(rollout)
-      419    0.001    0.000    0.076    0.000 BoardState.py:134(do_move)
-      420    0.008    0.000    0.075    0.000 PossibleActions.py:30(generate_actions)
-    14911    0.012    0.000    0.065    0.000 PossibleActions.py:50(add_action)
-    14911    0.011    0.000    0.045    0.000 PossibleActions.py:61(valid_action)
-    14856    0.006    0.000    0.025    0.000 Action.py:20(on_board)
-    14856    0.012    0.000    0.019    0.000 Action.py:64(hex_distance)
-     3547    0.002    0.000    0.009    0.000 PossibleActions.py:83(has_neighbour_in_jump_direction)
-    14977    0.008    0.000    0.008    0.000 Action.py:39(__init__)
-     3600    0.005    0.000    0.007    0.000 Action.py:51(get_neighbour_space)
-    14856    0.003    0.000    0.003    0.000 Action.py:57(same_sign)
-     9539    0.002    0.000    0.002    0.000 {built-in method builtins.max}
-     7428    0.002    0.000    0.002    0.000 PossibleActions.py:91(jump)
-     3600    0.002    0.000    0.002    0.000 Action.py:48(get_direction)
-    24394    0.002    0.000    0.002    0.000 {built-in method builtins.abs}
-      419    0.000    0.000    0.001    0.000 MCNode.py:70(rollout_policy)
-      419    0.000    0.000    0.001    0.000 random.py:256(choice)
-      419    0.001    0.000    0.001    0.000 BoardState.py:106(do_update)
-    243/1    0.000    0.000    0.001    0.001 copy.py:132(deepcopy)
-     16/1    0.000    0.000    0.001    0.001 copy.py:268(_reconstruct)
-     16/1    0.000    0.000    0.001    0.001 copy.py:236(_deepcopy_dict)
-      420    0.000    0.000    0.001    0.000 random.py:224(_randbelow)
-      7/3    0.000    0.000    0.001    0.000 copy.py:210(_deepcopy_list)
-     6187    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 MonteCarlo.py:33(expand_tree)
-        1    0.000    0.000    0.000    0.000 MCNode.py:55(expand)
-        1    0.000    0.000    0.000    0.000 BoardState.py:90(generate_successor)
-        1    0.000    0.000    0.000    0.000 BoardState.py:21(__init__)
-      420    0.000    0.000    0.000    0.000 BoardState.py:167(is_terminal_state)
-       40    0.000    0.000    0.000    0.000 copy.py:219(_deepcopy_tuple)
-      649    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
-       40    0.000    0.000    0.000    0.000 copy.py:220(<listcomp>)
-      420    0.000    0.000    0.000    0.000 BoardState.py:145(player_turn_order)
-      385    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
-      841    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-      420    0.000    0.000    0.000    0.000 PossibleActions.py:101(get_actions)
-      502    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
-      420    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
-       32    0.000    0.000    0.000    0.000 copy.py:273(<genexpr>)
-       40    0.000    0.000    0.000    0.000 copy.py:252(_keep_alive)
-      363    0.000    0.000    0.000    0.000 {built-in method builtins.id}
-        1    0.000    0.000    0.000    0.000 MCNode.py:40(best_child)
-       33    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
-       16    0.000    0.000    0.000    0.000 copyreg.py:87(__newobj__)
-      163    0.000    0.000    0.000    0.000 copy.py:190(_deepcopy_atomic)
-       16    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
-        1    0.000    0.000    0.000    0.000 random.py:218(randint)
-        1    0.000    0.000    0.000    0.000 random.py:174(randrange)
-        1    0.000    0.000    0.000    0.000 BoardState.py:37(update_piece_positions)
-        1    0.000    0.000    0.000    0.000 MCNode.py:33(fully_expanded)
-        2    0.000    0.000    0.000    0.000 {built-in method numpy.array}
-      2/1    0.000    0.000    0.000    0.000 MCNode.py:83(backpropogate)
-       16    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
-       32    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-        1    0.000    0.000    0.000    0.000 MCNode.py:20(__init__)
-       16    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-        3    0.000    0.000    0.000    0.000 MCNode.py:101(untried_actions)
-       16    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x72691320}
-        1    0.000    0.000    0.000    0.000 MCNode.py:107(wins)
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
-       16    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-       17    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
-        1    0.000    0.000    0.000    0.000 MonteCarlo.py:27(traverse)
-        1    0.000    0.000    0.000    0.000 {method '__deepcopy__' of 'numpy.ndarray' objects}
-        1    0.000    0.000    0.000    0.000 BoardState.py:39(<listcomp>)
-        1    0.000    0.000    0.000    0.000 {built-in method math.log}
-        1    0.000    0.000    0.000    0.000 MCNode.py:97(has_children)
-        1    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 BoardState.py:178(get_winner)
-        1    0.000    0.000    0.000    0.000 PossibleActions.py:104(__init__)
-        1    0.000    0.000    0.000    0.000 MCNode.py:89(get_generated_by)
+        1    0.000    0.000    0.284    0.284 MonteCarlo.py:16(best_action)
+       30    0.007    0.000    0.280    0.009 MCNode.py:73(rollout)
+     2923    0.006    0.000    0.246    0.000 BoardState.py:129(do_move)
+     2953    0.005    0.000    0.234    0.000 PossibleActions.py:33(generate_actions)
+     2953    0.037    0.000    0.223    0.000 PossibleActions.py:35(<listcomp>)
+   118707    0.138    0.000    0.186    0.000 PossibleActions.py:48(_actions)
+    97833    0.048    0.000    0.048    0.000 Action.py:39(__init__)
+  7277/30    0.008    0.000    0.018    0.001 copy.py:132(deepcopy)
+   479/30    0.001    0.000    0.018    0.001 copy.py:268(_reconstruct)
+   479/30    0.001    0.000    0.018    0.001 copy.py:236(_deepcopy_dict)
+   210/90    0.001    0.000    0.016    0.000 copy.py:210(_deepcopy_list)
+     2923    0.001    0.000    0.007    0.000 MCNode.py:69(rollout_policy)
+     2923    0.005    0.000    0.007    0.000 BoardState.py:104(do_update)
+     2953    0.003    0.000    0.006    0.000 PossibleActions.py:36(<listcomp>)
+     2923    0.002    0.000    0.006    0.000 random.py:256(choice)
+     1198    0.002    0.000    0.005    0.000 copy.py:219(_deepcopy_tuple)
+       30    0.000    0.000    0.004    0.000 MonteCarlo.py:33(expand_tree)
+     2953    0.003    0.000    0.004    0.000 random.py:224(_randbelow)
+     1198    0.001    0.000    0.003    0.000 copy.py:220(<listcomp>)
+       30    0.000    0.000    0.003    0.000 MCNode.py:55(expand)
+    11789    0.003    0.000    0.003    0.000 PossibleActions.py:44(exits)
+       30    0.000    0.000    0.003    0.000 BoardState.py:88(generate_successor)
+       30    0.000    0.000    0.002    0.000 BoardState.py:21(__init__)
+    15033    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+     2953    0.002    0.000    0.002    0.000 BoardState.py:162(is_terminal_state)
+      534    0.001    0.000    0.001    0.000 Action.py:52(get_neighbour_space)
+     4454    0.001    0.000    0.001    0.000 {method 'getrandbits' of '_random.Random' objects}
+    10871    0.001    0.000    0.001    0.000 {built-in method builtins.id}
+      958    0.000    0.000    0.001    0.000 copy.py:273(<genexpr>)
+     1198    0.001    0.000    0.001    0.000 copy.py:252(_keep_alive)
+       30    0.000    0.000    0.001    0.000 MonteCarlo.py:27(traverse)
+       18    0.000    0.000    0.001    0.000 MCNode.py:40(best_child)
+     3180    0.001    0.000    0.001    0.000 {method 'remove' of 'list' objects}
+     2953    0.001    0.000    0.001    0.000 BoardState.py:140(player_turn_order)
+     5635    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+     5936    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+     4881    0.000    0.000    0.000    0.000 copy.py:190(_deepcopy_atomic)
+     2937    0.000    0.000    0.000    0.000 PossibleActions.py:121(get_actions)
+     2953    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+      534    0.000    0.000    0.000    0.000 Action.py:49(get_direction)
+     2953    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+      479    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
+      479    0.000    0.000    0.000    0.000 copyreg.py:87(__newobj__)
+      988    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       60    0.000    0.000    0.000    0.000 {built-in method numpy.array}
+      234    0.000    0.000    0.000    0.000 MCNode.py:106(wins)
+       30    0.000    0.000    0.000    0.000 BoardState.py:36(update_piece_positions)
+      958    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    77/30    0.000    0.000    0.000    0.000 MCNode.py:82(backpropogate)
+      479    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       30    0.000    0.000    0.000    0.000 random.py:218(randint)
+       30    0.000    0.000    0.000    0.000 MCNode.py:20(__init__)
+       30    0.000    0.000    0.000    0.000 random.py:174(randrange)
+      479    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      479    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x72691320}
+      702    0.000    0.000    0.000    0.000 MCNode.py:117(visits)
+      123    0.000    0.000    0.000    0.000 MCNode.py:100(untried_actions)
+      479    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+      509    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+      234    0.000    0.000    0.000    0.000 {built-in method math.log}
+       30    0.000    0.000    0.000    0.000 MCNode.py:33(fully_expanded)
+      234    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+       30    0.000    0.000    0.000    0.000 {method '__deepcopy__' of 'numpy.ndarray' objects}
+       30    0.000    0.000    0.000    0.000 BoardState.py:37(<listcomp>)
+       18    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       47    0.000    0.000    0.000    0.000 MCNode.py:96(has_children)
+       30    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       30    0.000    0.000    0.000    0.000 BoardState.py:173(get_winner)
+       30    0.000    0.000    0.000    0.000 MCNode.py:88(get_generated_by)
+       30    0.000    0.000    0.000    0.000 PossibleActions.py:124(__init__)
+       18    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
-        3    0.000    0.000    0.000    0.000 MCNode.py:118(visits)
 
 
-*   red player returned action: ('MOVE', ((-2, 1), (-2, 0)))
-*   time:  + 0.078s  (just elapsed)    0.250s  (game total)
+*   red player returned action: ('JUMP', ((-3, 1), (-1, -1)))
+*   time:  + 0.281s  (just elapsed)    0.578s  (game total)
 * displaying game info:
 *   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |     |  G  |  G  |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |  G  |     |     |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |  R  |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |     |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |  B  |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |     |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with red's action ('MOVE', ((-2, 1), (-2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
-* updating green player with red's action ('MOVE', ((-2, 1), (-2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.062s  (game total)
-* updating blue player with red's action ('MOVE', ((-2, 1), (-2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
-* ** green player's turn **
-* asking green player for next action...
-*   green player returned action: ('MOVE', ((3, -3), (3, -2)))
-*   time:  + 0.062s  (just elapsed)    0.125s  (game total)
-* displaying game info:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |     |  G  |     |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |  G  |     |  G  |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |  R  |     |     |     |     |  B  |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |     |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |  B  |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |     |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with green's action ('MOVE', ((3, -3), (3, -2)))...
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
-* updating green player with green's action ('MOVE', ((3, -3), (3, -2)))...
-*   time:  + 0.000s  (just elapsed)    0.125s  (game total)
-* updating blue player with green's action ('MOVE', ((3, -3), (3, -2)))...
-*   time:  + 0.000s  (just elapsed)    0.047s  (game total)
-* ** blue player's turn **
-* asking blue player for next action...
-*   blue player returned action: ('MOVE', ((3, 0), (2, 0)))
-*   time:  + 0.125s  (just elapsed)    0.172s  (game total)
-* displaying game info:
-*   scores: Red: 0 exits, Green: 0 exits, Blue: 0 exits.
-*   board:    .-'-._.-'-._.-'-._.-'-.
-*            |  G  |     |  G  |     |
-*          .-'-._.-'-._.-'-._.-'-._.-'-.
-*         |     |     |  G  |     |  G  |
-*       .-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*      |     |     |     |     |     |     |
-*    .-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-.
-*   |  R  |  R  |     |     |     |  B  |     |
-*   '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*      |  R  |     |     |     |     |  B  |
-*      '-._.-'-._.-'-._.-'-._.-'-._.-'-._.-'
-*         |     |     |     |  B  |  B  |
-*         '-._.-'-._.-'-._.-'-._.-'-._.-'
-*            |  R  |     |     |     |
-*            '-._.-'-._.-'-._.-'-._.-'
-* updating red player with blue's action ('MOVE', ((3, 0), (2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.250s  (game total)
-* updating green player with blue's action ('MOVE', ((3, 0), (2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.125s  (game total)
-* updating blue player with blue's action ('MOVE', ((3, 0), (2, 0)))...
-*   time:  + 0.000s  (just elapsed)    0.172s  (game total)
-* ** red player's turn **
-* asking red player for next action...
+*   board:       ,-' `-._,-' `-._,-' `-._,-' `-.
+*               |   G   |       |   G   |   G   |
+*               |  0,-3 |  1,-3 |  2,-3 |  3,-3 |
+*            ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*           |       |   G   |       |       |       |
+*           | -1,-2 |  0,-2 |  1,-2 |  2,-2 |  3,-2 |
+*        ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*       |       |   R   |       |       |       |       |
+*       | -2,-1 | -1,-1 |  0,-1 |  1,-1 |  2,-1 |  3,-1 |
+*    ,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-.
+*   |       |   R   |       |       |       |       |   B   |
+*   | -3, 0 | -2, 0 | -1, 0 |  0, 0 |  1, 0 |  2, 0 |  3, 0 |
+*    `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*       |       |       |       |       |       |   B   |
+*       | -3, 1 | -2, 1 | -1, 1 |  0, 1 |  1, 1 |  2, 1 |
+*        `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' `-._,-'
+*           |   R   |       |       |   B   |       |
+*           | -3, 2 | -2, 2 | -1, 2 |  0, 2 |  1, 2 | key:
+*            `-._,-' `-._,-' `-._,-' `-._,-' `-._,-' ,-' `-.
+*               |   R   |       |       |   B   |   | input |
+*               | -3, 3 | -2, 3 | -1, 3 |  0, 3 |   |  q, r |
+*                `-._,-' `-._,-' `-._,-' `-._,-'     `-._,-'
+* updating red player with red's action ('JUMP', ((-3, 1), (-1, -1)))...
+*   time:  + 0.000s  (just elapsed)    0.578s  (game total)
+* updating green player with red's action ('JUMP', ((-3, 1), (-1, -1)))...
+*   time:  + 0.000s  (just elapsed)    0.000s  (game total)
+* updating blue player with red's action ('JUMP', ((-3, 1), (-1, -1)))...
+*  
