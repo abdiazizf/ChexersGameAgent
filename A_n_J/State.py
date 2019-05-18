@@ -127,10 +127,5 @@ class State(object):
             return 'red'
 
 
-    def get_winner(self):
-        winner = None
-        for player in self.score:
-            if self.score[player]['exits'] == 4:
-                winner = player
-        return winner
+
     
