@@ -1,7 +1,5 @@
 
-from A_n_J.BoardState import BoardState
-from A_n_J.MonteCarlo import MonteCarlo
-from A_n_J.MCNode import MCNode
+from A_n_J.State import State
 from A_n_J.Action import Action
 from copy import deepcopy
 import random

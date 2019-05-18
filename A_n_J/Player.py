@@ -1,9 +1,15 @@
 
-from A_n_J.BoardState import State
-from A_n_J.Action import Action
+from A_n_J.State import State
+import random
 import cProfile
 from copy import deepcopy
 
+
+# # JUMP, MOVE, PASS, EXIT
+# profile = cProfile.Profile()
+# profile.enable()#
+# profile.disable()
+# profile.print_stats()
 class Player:
     def __init__(self, colour):
         """
@@ -16,13 +22,10 @@ class Player:
         program will play as (Red, Green or Blue). The value will be one of the 
         strings "red", "green", or "blue" correspondingly.
         """
-        # TODO: Set up state representation.
         
-        initial_pieces = self.construct_piece_vectors()
-        self.initial_score = self.construct_score_dict()
-        self.current_score = deepcopy(self.initial_score)
-        self.initial_state = State("red",initial_pieces,self.initial_score)
-        self.current_state = self.initial_state
+        initial_pieces = self.position_initialisation()
+        self.score = self.score_initialisation()
+        self.state = State("red",initial_pieces,self.score, 0)
         self.pieces_exited = 0
         self.colour = colour
 
@@ -38,25 +41,9 @@ class Player:
         actions.
         """
         # TODO: Decide what action to take.
-        
-      # # JUMP, MOVE, PASS, EXIT
-      # profile = cProfile.Profile()
-      # profile.enable()#
-      # profile.disable()
-      # profile.print_stats()
-        if action:
-            if not 'action_type' in action.__dict__:
-                print(action)
-                return ("PASS", None)
-            if action.action_type == "PASS":
-                return ("PASS", None)
-            elif(action.action_type == "EXIT"):
-                return action.format_exit()
-            else:    
-                return action.format_output()
-        else:
-            return ("PASS", None)
 
+
+        return random.choice(self.state.legal_move)
 
     def update(self, colour, action):
         """
@@ -76,19 +63,18 @@ class Player:
         (or pass) for the player colour (your method does not need to validate 
         the action/pass against the game rules).
         """
-        
 
-        self.current_score[colour]["turns"] += 1 
-        new_action = self.convert_sim_action(action)
-        new_score = deepcopy(self.current_score)
-        self.current_state = self.current_state.update_board_state(new_action,colour,new_score)
+        new_score_vector, score = self.state.update_piece_positions(action)
+        self.state = State(self.state.next_player(), new_score_vector, score, 0)
+        print(new_score_vector)
 
-    
+        return
+
     '''
     Returns a dictionary of vectors containing the initial positions of the 
     pieces for each player on the board. Used during setup of a board_state
     '''
-    def construct_piece_vectors(self):
+    def position_initialisation(self):
         
         piece_vectors = {}
         piece_vectors["red"] = [(-3,0),(-3,1),(-3,2),(-3,3)]
@@ -97,7 +83,7 @@ class Player:
         
         return piece_vectors
         
-    def construct_score_dict(self):
+    def score_initialisation(self):
         
         score = {}
         score["red"] = {"exits": 0, "turns":0}
@@ -105,20 +91,4 @@ class Player:
         score["blue"] =  {"exits": 0, "turns":0}
         
         return score
-        
-    def convert_sim_action(self,action):
-        type = action[0]
-        if (type == "PASS"):
-            return Action((0,0),(0,0),"PASS")
-        if (type == "EXIT"):
-            origin = action[1]
-            direction = (0,0)
-            return Action(origin,direction,type)
-        else: 
-            origin = action[1][0]
-            destination = action[1][1]
-    
-            direction = (destination[0] - origin[0],destination[1] - origin[1])
-            
-            return Action(origin,direction,type)
         
