@@ -19,7 +19,7 @@ JUMP = "JUMP"
 EXIT = "EXIT"
 PASS = "PASS"
 
-class State(object):
+class State:
     '''
     Representation of the current board state in a game of Chexers
     

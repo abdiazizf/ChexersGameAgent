@@ -1,1 +1,1 @@
-from A_n_J.RandomPlayer import Player as Player
+from A_n_J.Player import Player as Player

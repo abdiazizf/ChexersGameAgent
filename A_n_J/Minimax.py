@@ -1,28 +1,21 @@
-from State import exit_spaces, axial_directions , axial_jump , coordinates
-from Player import Player
+from A_n_J.State import exit_spaces, axial_directions, axial_jump, coordinates
 from itertools import chain
-class Minimax :
-
-
-    def __init__(self, initial_state, depth) :
+class Minimax:
+    def __init__(self, initial_state, depth, colour) :
+        self.colour = colour
         self.initial_state = initial_state
         self.depth = depth
-
-
-
-
-
-
+        self.distance = 0
+        self.safe_pieces = []
+        self.aggressive_pieces = []
+        self.aggressive_safe_pieces = []
+        self.aggressive()
+        self.hex_distance(exit_spaces)
 
     def utility_function(self):
         total_score = 0
 
         return total_score
-
-
-
-
-
     '''
        Returns true if both numbers share the same sign, ie + or - 
        '''
@@ -36,24 +29,23 @@ class Minimax :
     '''
 
     def hex_distance(self, exit_spaces):
-        distance = 0
         list_distances= []
-        for piece in self.initial_state.piece_vectors[Player.colour]:
-            for exit_position in exit_spaces[Player.colour]:
+        for piece in self.initial_state.piece_vectors[self.colour]:
+            for exit_position in exit_spaces[self.colour]:
                 distance_x = exit_position[0] - piece[0]
                 distance_y = exit_position[1] - piece[1]
             if self.same_sign(distance_x, distance_y):
-                return list_distances.append(abs(distance_x + distance_y))
+                list_distances.append(abs(distance_x + distance_y))
             else:
-                return list_distances.append(max(abs(distance_x), abs(distance_y)))
-            distance += min(list_distances)
-        return distance
+                list_distances.append(max(abs(distance_x), abs(distance_y)))
+            self.distance += min(list_distances)
+        return
 
     def safe_pieces(self):
         safe_pieces = []
         all_pieces = chain.from_iterable(self.initial_state.piece_vectors.values())
-        opponent_pieces = diff(all_pieces,self.initial_state.piece_vectors[Player.colour])
-        for my_piece in self.initial_state.piece_vectors[Player.colour]:
+        opponent_pieces = diff(all_pieces,self.initial_state.piece_vectors[self.colour])
+        for my_piece in self.initial_state.piece_vectors[self.colour]:
             safe = True
             for opponent_piece in opponent_pieces:
                 direction = (opponent_piece[0] - my_piece[0], opponent_piece[1] - my_piece[1])
@@ -62,15 +54,18 @@ class Minimax :
                     continue
                 safe = False
             if safe :
-                safe_pieces.append(my_piece)
-
+                self.safe_pieces.append(my_piece)
+        return
     #ALSO CONSIDER THE PIECE THAT IS BEING CAPTURED AS WELL OPPONENT MAY CAPTURE IT RIGHT BACK
+
+
+    #OPPONENT PIECES NOT CONVERTED WHEN CONSIDERING IF A PIECE IS SAFE TO JUMP
     def aggressive(self):
         aggressive_pieces = []
         aggressive_safe_pieces = []
         all_pieces = chain.from_iterable(self.initial_state.piece_vectors.values())
-        opponent_pieces = diff(all_pieces, self.initial_state.piece_vectors[Player.colour])
-        for my_piece in self.initial_state.piece_vectors[Player.colour]:
+        opponent_pieces = diff(all_pieces, self.initial_state.piece_vectors[self.colour])
+        for my_piece in self.initial_state.piece_vectors[self.colour]:
             aggressive = False
             safe = True
             for jump in axial_jump :
@@ -86,10 +81,10 @@ class Minimax :
                         continue
                     safe = False
             if aggressive:
-                aggressive_pieces.append(my_piece)
+                self.aggressive_pieces.append(my_piece)
             if aggressive and safe :
-                aggressive_safe_pieces.append(my_piece)
-
+                self.aggressive_safe_pieces.append(my_piece)
+        return
 
 
 
@@ -100,8 +95,3 @@ class Minimax :
 def diff(first, second) :
     second = set(second)
     return [piece for piece in first if piece not in second]
-
- # possible axial directions
-                axial_directions = [(1, 0), (1, -1), (0, -1), (-1, 0), (-1, 1), (0, 1)]
-                # possible jump directions
-                axial_jump = [(2, 0), (2, -2), (0, -2), (-2, 0), (-2, 2), (0, 2)]

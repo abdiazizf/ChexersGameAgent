@@ -1,4 +1,3 @@
-
 from A_n_J.State import State
 import random
 import cProfile
@@ -10,7 +9,7 @@ from copy import deepcopy
 # profile.enable()#
 # profile.disable()
 # profile.print_stats()
-class RandomPlayer:
+class Player:
     def __init__(self, colour):
         """
         This method is called once at the beginning of the game to initialise

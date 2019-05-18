@@ -1,5 +1,6 @@
 from A_n_J.State import State
 import random
+from A_n_J.Minimax import Minimax
 import cProfile
 from copy import deepcopy
 
@@ -40,7 +41,13 @@ class Player:
         actions.
         """
         # TODO: Decide what action to take.
-
+        t = Minimax(self.state,0,self.colour)
+        print(t.safe_pieces)
+        print("\n")
+        print(t.aggressive_safe_pieces)
+        print("\n")
+        print(t.aggressive_pieces)
+        print("\n")
         return random.choice(self.state.legal_move)
 
     def update(self, colour, action):
