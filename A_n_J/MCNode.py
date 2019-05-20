@@ -72,10 +72,12 @@ class MCNode(object):
     
     def rollout(self):
         current_state = deepcopy(self.state)
-        while current_state.is_terminal_state() != True:
+        depth = 0
+        while depth < 60:
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
             current_state.do_move(action)
+            depth += 1
         winner = current_state.get_winner()
         return winner
                                                   

@@ -6,6 +6,7 @@ Created on Apr 28, 2019
 from A_n_J.PossibleActions import PossibleActions
 import numpy as np
 
+
 class BoardState(object):
     '''
     Representation of the current board state in a game of Chexers
@@ -163,15 +164,46 @@ class BoardState(object):
             
     def get_winner(self):
         winner = None
-        if self.score[1] == 4:
-            winner = 1
-        if self.score[1] == 4:
-            winner = 2
-        if self.score[1] == 4:
-            winner = 3
+        max = -9999
+        for i in range(1,4):
+            temp_score = self.evaluation_function(i)
+            if temp_score > max:
+                winner = i
+                max = temp_score
         return winner
     
+    def evaluation_function(self,colour):
+        # Evaluation function that returns a player colour
+        # material weight, num exits, win/draw/loss threatened pieces, pieces that can be taken 
 
+        material_weight = len(self.piece_vectors[colour])
+        
+        if material_weight == 0:
+            material_weight = -100
+        
+        opposing_material = np.count_nonzero(self.board)-material_weight
+        if opposing_material == 0:
+            opposing_material = 1
+        self_exits = self.score[colour]
+        opposing_exits = np.sum(self.score[1:])
+        if opposing_exits == 0:
+            opposing_exits = 0.1
+        
+        
+        #print(material_weight,opposing_material,self_exits,opposing_exits)
+        return (material_weight/opposing_material) + (4*self_exits - opposing_exits) + self.wins(colour)
+
+    def wins(self,colour):
+        if self.score[colour] == 4:
+            return 100
+        else:   
+            for i in range(1,4):
+                if i != colour:
+                    if self.score[i] == 4:
+                        return -100
+            return 0
+        
+    
     '''
     Defines comparison of two board states
     '''
