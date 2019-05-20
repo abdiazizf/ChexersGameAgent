@@ -63,7 +63,7 @@ class Player:
         # JUMP, MOVE, PASS, EXIT 
         #action = self.mcAI.best_action(1)
         self.current_state.legal_moves.generate_actions
-        action = random.choice(self.current_state.legal_moves.actions)
+        action = self.mcAI.best_action(50)
         if action:
             if not 'type' in action.__dict__:
                 return ("PASS", None)

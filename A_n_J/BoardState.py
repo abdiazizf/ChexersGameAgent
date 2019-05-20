@@ -152,7 +152,7 @@ class BoardState(object):
         return self.score[:]
     
     def is_terminal_state(self):
-        if self.score[0] == 756:
+        if self.score[0] == 60:
             return True
         if self.score[1] == 4:
             return True
@@ -187,11 +187,10 @@ class BoardState(object):
         self_exits = self.score[colour]
         opposing_exits = np.sum(self.score[1:])
         if opposing_exits == 0:
-            opposing_exits = 0.1
+            opposing_exits = 1
         
         
-        #print(material_weight,opposing_material,self_exits,opposing_exits)
-        return (material_weight/opposing_material) + (4*self_exits - opposing_exits) + self.wins(colour)
+        return (material_weight/opposing_material) + 10*(self_exits/opposing_exits) + self.wins(colour)
 
     def wins(self,colour):
         if self.score[colour] == 4:

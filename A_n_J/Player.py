@@ -28,7 +28,6 @@ class Player:
             for piece in player:
                 self.board[piece] = i
             i+= 1 
-
         self.initial_state = BoardState(1,initial_pieces,self.initial_score,self.board)
         self.current_board = np.array(self.board)
         self.current_state = BoardState(1,initial_pieces,self.initial_score,self.board)
@@ -42,7 +41,7 @@ class Player:
         pr.enable()
         
         # JUMP, MOVE, PASS, EXIT 
-        action = self.mcAI.best_action(1000)
+        action = self.mcAI.best_action(250)
  
         pr.disable()
  
