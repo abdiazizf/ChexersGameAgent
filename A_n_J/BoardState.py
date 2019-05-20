@@ -4,8 +4,8 @@ Created on Apr 28, 2019
 @author: Jordan
 '''
 from A_n_J.PossibleActions import PossibleActions
-import copy
-from copy import deepcopy
+import numpy as np
+
 
 class BoardState(object):
     '''
@@ -18,100 +18,192 @@ class BoardState(object):
     
     '''
     
-    def __init__(self, player_colour,piece_vector,score):
+    
+    def __init__(self, player_colour,piece_vector,score,board):
         self.player_colour = player_colour
-        self.piece_vectors = deepcopy(piece_vector)
+        new_vector = piece_vector[:]
+        self.piece_vectors = new_vector
+        self.board = np.array(board)
+
         self.legal_moves = PossibleActions(self)
-        self.legal_moves.generate_actions(player_colour,self)
+        self.legal_moves.generate_actions(player_colour,self.piece_vectors,self.board)
         self.score = score
-        self.players_max_move = 0
+        
         
     '''
     Takes an action and player colour as input, returns a new piece vector that
-    represents the move taken by that player
+    represents the move taken by that player 
     '''
-    def update_piece_positions(self,colour,action):
-        new_vector = {}
-        
-        red = deepcopy(self.piece_vectors['red'])
-        blue = deepcopy(self.piece_vectors['blue'])
-        green = deepcopy(self.piece_vectors['green'])
-        
-        new_vector['red'] = red
-        new_vector['green'] = green
-        new_vector['blue'] = blue
-        
-        if(action.action_type == "PASS"):
-            self.score[self.player_colour]["turns"] += 1
+    def update_piece_positions(self,colour,action,board):
+        new_vector = [row[:] for row in self.piece_vectors]
+
+        if(action.type == "PASS"):
             return new_vector
-        
-        origin = action.origin
-        destination = action.destination
-        if(action.action_type == "EXIT"):
-            self.score[colour]["exits"] +=1
-            new_vector[colour].remove(origin)
-        elif(action.action_type == "JUMP"):
+        elif(action.type == "EXIT"):
+            new_vector[colour].remove(action.origin)
+            board[action.origin] = 0
+            return new_vector
+        elif(action.type == "JUMP"):
+            #Check if another player was captured
             neighbour = action.get_neighbour_space()
-            pc = None
-            piece_taken = False
-            for player in new_vector:
-                for piece in new_vector[player]:
-                    if piece == neighbour:
-                        pc = player
-                        piece_taken = True
-            new_vector[colour].remove(origin)
-            new_vector[colour].append(destination)
-            if piece_taken == True:
-                new_vector[pc].remove(neighbour)
+            other_player = self.board[neighbour]
+    
+            if board[neighbour] != 0 and board[neighbour] != colour:
+                new_vector[other_player].remove(neighbour)
                 new_vector[colour].append(neighbour)
-        else:
-            new_vector[colour].remove(origin)
-            new_vector[colour].append(destination)
-        self.score[self.player_colour]["turns"] += 1
+                board[neighbour] = colour
+        
+        new_vector[colour].remove(action.origin)
+        new_vector[colour].append(action.destination)
+        
+        board[action.origin] = 0
+        board[action.destination] = colour
+        
         return new_vector
         
-    def update_board_state(self,action,colour,score):
-        new_piece_vector = self.update_piece_positions(colour, action)
-        next_player = self.player_turn_order()
-        new_score = deepcopy(score)
-
-        return BoardState(next_player,new_piece_vector,new_score)
+    def update_game_state(self,action,colour,score,board):
         
-    def player_turn_order(self):
-        if (self.player_colour == "red"):
-            return 'green'
-        elif( self.player_colour == 'green'):
-            return 'blue'
-        else:
-            return 'red'
+        # Needs to 
+        # Reconfigure piece positions 
+        #Change board entries
+        # add to score
+        # change turn order
+        # return the new state 
+        
+        new_piece_vector = self.update_piece_positions(colour, action, self.board)
+        next_player = self.player_turn_order()
+        new_score = score[:]
+        new_board = np.array(board)
+
+        return BoardState(next_player,new_piece_vector,new_score,new_board)
+        
     
     def generate_successor(self,action):
-        
-        #self.generated_by = action
-        new_piece_vector = self.update_piece_positions(self.player_colour, action)
+
+        new_board = np.array(self.board)
+        new_piece_vector = self.update_piece_positions(self.player_colour, action,new_board)
         next_player = self.player_turn_order()
-        new_state = BoardState(next_player,new_piece_vector,self.score)
+        new_score = self.score[:]
+
+        if(action.type == "EXIT"):
+            new_score[self.player_colour] += 1
+        new_score[0] += 1
+        
+        new_state = BoardState(next_player,new_piece_vector,new_score,new_board)
+
         
         return new_state
     
-    def is_terminal_state(self):
-        max_moves = 0
-        if not self.piece_vectors[self.player_colour]:
-            return True
-        for player in self.score:
-            if self.score[player]["exits"] == 4:
-                return True
-            if self.score[player]["turns"] >= 256:
-                max_moves +=1
-        if max_moves == 3:
-            return True
+    def do_update(self,colour,action,board):
+        new_vector = self.piece_vectors
+        if(action.type == "PASS"):
+            return new_vector
+        elif(action.type == "EXIT"):
+            board[action.origin] = 0
+            new_vector[colour].remove(action.origin)
+            return new_vector
+        elif(action.type == "JUMP"):
+            #Check if another player was captured
+            neighbour = action.get_neighbour_space()
+            other_player = self.board[neighbour]
+            if board[neighbour] != 0 and board[neighbour] != colour:
+                new_vector[other_player].remove(neighbour)
+                new_vector[colour].append(neighbour)
+                board[neighbour] = colour
+        
+        new_vector[colour].remove(action.origin)
+        new_vector[colour].append(action.destination)
+        
+        board[action.origin] = 0
+        board[action.destination] = colour
+    
+    
+    def do_move(self,action):
+        self.do_update(self.player_colour, action, self.board)
+        if(action.type == "EXIT"):
+            self.score[self.player_colour] += 1
+        self.score[0] += 1
+        self.player_colour = self.player_turn_order()
+        self.legal_moves.actions = []
+        self.legal_moves.generate_actions(self.player_colour, self.piece_vectors, self.board)
+    
+    
+    
+    def player_turn_order(self):
+        if (self.player_colour == 1):
+            return 2
+        elif( self.player_colour == 2):
+            return 3
         else:
-            return False
+            return 1
+    
+    def validate_board(self):
+        p = 0
+        for player in self.piece_vectors:
+            for piece in player:
+                if self.board[piece] == 0:
+                    return False
+                if self.board[piece] != p:
+                    print("INVALID BOARD",piece,p)
+                    return False
+            p += 1 
+    def copy_score(self):
+
+        return self.score[:]
+    
+    def is_terminal_state(self):
+        if self.score[0] == 756:
+            return True
+        if self.score[1] == 4:
+            return True
+        if self.score[2] == 4:
+            return True
+        if self.score[3] == 4:
+            return True 
+        return False
             
     def get_winner(self):
-        for player in self.score:
-            if self.score[player]['exits'] == 4:
-                return player
+        winner = None
+        max = -9999
+        for i in range(1,4):
+            temp_score = self.evaluation_function(i)
+            if temp_score > max:
+                winner = i
+                max = temp_score
+        return winner
+    
+    def evaluation_function(self,colour):
+        # Evaluation function that returns a player colour
+        # material weight, num exits, win/draw/loss threatened pieces, pieces that can be taken 
+
+        material_weight = len(self.piece_vectors[colour])
+        
+        if material_weight == 0:
+            material_weight = -100
+        
+        opposing_material = np.count_nonzero(self.board)-material_weight
+        if opposing_material == 0:
+            opposing_material = 1
+        self_exits = self.score[colour]
+        opposing_exits = np.sum(self.score[1:])
+        if opposing_exits == 0:
+            opposing_exits = 0.1
+        
+        
+        #print(material_weight,opposing_material,self_exits,opposing_exits)
+        return (material_weight/opposing_material) + (4*self_exits - opposing_exits) + self.wins(colour)
+
+    def wins(self,colour):
+        if self.score[colour] == 4:
+            return 100
+        else:   
+            for i in range(1,4):
+                if i != colour:
+                    if self.score[i] == 4:
+                        return -100
+            return 0
+        
+    
     '''
     Defines comparison of two board states
     '''

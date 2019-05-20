@@ -20,10 +20,6 @@ class Action(object):
     def on_board(self):
         if(self.hex_distance(self.destination, (0,0) ) > 3):
             return False
-        if (self.destination[0] < -3) or (self.destination[0] > 3):
-            return False
-        if (self.destination[1] < -3) or (self.destination[1] > 3):
-            return False
         else: 
             return True
         
@@ -34,10 +30,10 @@ class Action(object):
          (  JUMP, ( (1,0) , (3,0) )  )
     '''
     def format_output(self):
-        return (self.action_type, ((self.origin), (self.destination)))
+        return (self.type, ((self.origin), (self.destination)))
     
     def format_exit(self):
-        return (self.action_type, (self.origin))
+        return (self.type, (self.origin))
        
     
     def __init__(self, origin, direction, action_type):
@@ -46,7 +42,10 @@ class Action(object):
         '''
         self.origin = origin
         self.destination = (origin[0] + direction[0],origin[1] + direction[1])
-        self.action_type = action_type
+        self.type = action_type
+        #if action_type == "JUMP":
+        #    self.dir = direction
+
         
         
     def get_direction(self):
@@ -54,7 +53,7 @@ class Action(object):
         
     def get_neighbour_space(self):
         direction = self.get_direction()
-        return ( int((self.origin[0])) + int((direction[0]/2)) , int((self.origin[1])) + int((direction[1]/2)) )
+        return ( (self.origin[0]) + int((direction[0]/2)) , (self.origin[1]) + int((direction[1]/2)) )
     '''
     Returns true if both numbers share the same sign, ie + or - 
     '''
@@ -75,4 +74,18 @@ class Action(object):
             return max(abs(distance_x), abs(distance_y))
     
         return
+    
+    def compare_to(self, other):
+        
+        if self.origin != other.origin:
+            return False
+        if self.destination != other.destination:
+            return False
+        if self.type != other.type:
+            return False
+        else: 
+            return True
+        
+    
+        
         

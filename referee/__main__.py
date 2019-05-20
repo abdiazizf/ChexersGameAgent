@@ -10,6 +10,7 @@ from referee.game import Chexers, IllegalActionException
 from referee.player import PlayerWrapper, ResourceLimitException, set_space_line
 from referee.options import get_options
 
+
 def main():
     # Parse command-line options into a namespace for use throughout this
     # program
