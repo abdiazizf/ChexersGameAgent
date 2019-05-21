@@ -5,6 +5,7 @@ Created on Apr 28, 2019
 '''
 from A_n_J.PossibleActions import PossibleActions
 import numpy as np
+from itertools import chain
 
 
 class BoardState(object):
@@ -191,12 +192,16 @@ class BoardState(object):
     '''
     def get_winner(self):
         winner = None
-        max = -9999
+        max = -999999
         for i in range(1,4):
             temp_score = self.evaluation_function(i)
+            if temp_score == 1234567890: 
+                return None
+            #print(i,temp_score)
             if temp_score > max:
                 winner = i
                 max = temp_score
+        #print("----------")
         return winner
     
     '''
@@ -206,31 +211,58 @@ class BoardState(object):
     def evaluation_function(self,colour):
 
         material_weight = len(self.piece_vectors[colour])
-        
         if material_weight == 0:
             material_weight = -10000
         
         opposing_material = np.count_nonzero(self.board)-material_weight
         if opposing_material == 0:
-            opposing_material = 1
+            return 1234567890
         self_exits = self.score[colour]
-        opposing_exits = np.sum(self.score[1:])
+        opposing_exits = np.sum(self.score[1:]) - self_exits
         if opposing_exits == 0:
-            opposing_exits = 1
+            opposing_exits = 0.01
+            
+        mobility = len(self.legal_moves.actions)
+            
+        safe = self.safe_pieces(colour)
         
-        
-        return (material_weight/opposing_material) + 10*(self_exits/opposing_exits) + self.wins(colour)
+        return 4*(self_exits/opposing_exits) + 2*(material_weight/opposing_material) + 0.7*safe + self.wins(colour) 
 
     '''
     Checks if the current player has won the game, or if another player has won.
     '''
     def wins(self,colour):
         if self.score[colour] == 4:
-            return 100
+            return 10000
         else:   
             for i in range(1,4):
                 if i != colour:
                     if self.score[i] == 4:
-                        return -100
+                        return -10000
+            if len(self.piece_vectors[colour]) == 0:
+                return -10000
             return 0
+    '''
+    Evaluates the number of pieces not threatened by a jump from another piece 
+    '''
+    def safe_pieces(self, colour):
+        safe_count = 0
+        safe = True
+        
+        for my_piece in self.piece_vectors[colour]:
+            safe = True
+            for dir in self.legal_moves.axial_directions: 
+                threat_space = (my_piece[0] + dir[0],my_piece[1] + dir[1])
+                open_space = (my_piece[0] - dir[0],my_piece[1] - dir[1])
+                if open_space in self.legal_moves.valid_board:
+                    if threat_space in self.legal_moves.valid_board:
+                        if self.board[threat_space] != 0 and self.board[threat_space] != colour: 
+                            safe = False
+            if safe:
+                safe_count += 1
+        return safe_count
     
+    
+    def diff(self, first, second):
+        second = set(second)
+        return [piece for piece in first if piece not in second]

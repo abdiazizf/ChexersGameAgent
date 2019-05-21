@@ -109,13 +109,16 @@ class MCNode(object):
     def rollout(self):
         current_state = deepcopy(self.state)
         depth = 0
+        endgame = False
         # imposed depth limit 
-        while depth < 40 and current_state.is_terminal_state() == False:
+        while depth < 30 and current_state.is_terminal_state() == False:
             # Choose a move and modify the current state
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
             current_state.do_move(action)
             depth += 1
+            if(endgame == True):
+                depth = 768
         winner = current_state.get_winner()
         return winner
     

@@ -39,7 +39,8 @@ class Player:
 
         # Select an action using the MCTS, input is the number of simulations 
         # that will run each turn
-        action = self.mcAI.best_action(100)
+        action = self.mcAI.best_action(400)
+        
         
         # Sanitise the selected action to deal with edge cases 
         # Then returns the formatted output of the action back to the referee
@@ -70,9 +71,9 @@ class Player:
         # Create new state based on the updated information
         self.current_state = self.current_state.update_game_state(new_action,self.convert_colour(colour),new_score,self.current_state.board)
         
-        
         #Update new root node in tree
         new_node = MCNode(self.current_state)
+        
         
         # If the node already exists, traverse to it to preserve current statistics
         for child in self.mcAI.initial_node.children:
@@ -130,17 +131,27 @@ class Player:
     montecarlo ai
     '''
     def convert_sim_action(self,action):
+        
+        # Because some battlegrounds players wouldn't stop returning floats as 
+        # their action coordinates 
+    
+         
         type = action[0]
         if (type == "PASS"):
             return Action((0,0),(0,0),"PASS")
         if (type == "EXIT"):
-            origin = action[1]
+            o1 = int(action[1][0])
+            o2 = int(action[1][1])
             direction = (0,0)
-            return Action(origin,direction,type)
+            return Action((o1,o2),direction,type)
         else: 
-            origin = action[1][0]
-            destination = action[1][1]
-    
+            o1 = int(action[1][0][0])
+            o2 = int(action[1][0][1])
+            o3 = int(action[1][1][0])
+            o4 = int(action[1][1][1]) 
+            
+            origin = (o1,o2)
+            destination = (o3,o4) 
             direction = (destination[0] - origin[0],destination[1] - origin[1])
             
             return Action(origin,direction,type)
