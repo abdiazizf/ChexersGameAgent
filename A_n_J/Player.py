@@ -39,7 +39,7 @@ class Player:
 
         # Select an action using the MCTS, input is the number of simulations 
         # that will run each turn
-        action = self.mcAI.best_action(10)
+        action = self.mcAI.best_action(100)
         
         # Sanitise the selected action to deal with edge cases 
         # Then returns the formatted output of the action back to the referee
@@ -58,13 +58,14 @@ class Player:
 
     def update(self, colour, action):
 
+        
         # Increment the number of turns 
-        new_score = self.current_score[:]
+        new_score = np.array(self.current_score)
         new_score[0] += 1 
+        self.current_score = np.array(new_score)
         
         #Convert the action taken to the correct format
         new_action = self.convert_sim_action(action)
-        
         
         # Create new state based on the updated information
         self.current_state = self.current_state.update_game_state(new_action,self.convert_colour(colour),new_score,self.current_state.board)
@@ -122,7 +123,7 @@ class Player:
     '''
     def construct_score_dict(self):
         
-        return [0,0,0,0]
+        return np.array([0,0,0,0])
         
     '''
     Converts the input from the referee into an Action object useable by the 

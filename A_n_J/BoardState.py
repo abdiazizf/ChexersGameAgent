@@ -27,7 +27,7 @@ class BoardState(object):
         self.board = np.array(board)
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self.piece_vectors,self.board)
-        self.score = score
+        self.score = np.array(score)
         
         
     '''
@@ -175,7 +175,7 @@ class BoardState(object):
     or if any player exits four pieces from the board. 
     '''
     def is_terminal_state(self):
-        if self.score[0] == 756:
+        if self.score[0] == 768:
             return True
         if self.score[1] == 4:
             return True
@@ -219,7 +219,7 @@ class BoardState(object):
             opposing_exits = 1
         
         
-        return 10*(material_weight/opposing_material) + (self_exits/10*opposing_exits) + self.wins(colour)
+        return (material_weight/opposing_material) + 10*(self_exits/opposing_exits) + self.wins(colour)
 
     '''
     Checks if the current player has won the game, or if another player has won.

@@ -24,7 +24,6 @@ class MonteCarlo(object):
     selects the best action after all simulations have been completed. 
     '''
     def best_action(self, num_simulations):
-        
         for sim in range(0, num_simulations):
             selected_node = self.expand_tree()
             simulation_result = selected_node.rollout()

@@ -110,7 +110,7 @@ class MCNode(object):
         current_state = deepcopy(self.state)
         depth = 0
         # imposed depth limit 
-        while depth < 40 or not current_state.is_terminal_state():
+        while depth < 40 and current_state.is_terminal_state() == False:
             # Choose a move and modify the current state
             possible_moves = current_state.legal_moves.get_actions()
             action = self.rollout_policy(possible_moves)
