@@ -39,7 +39,7 @@ class Player:
 
         # Select an action using the MCTS, input is the number of simulations 
         # that will run each turn
-        action = self.mcAI.best_action(1000)
+        action = self.mcAI.best_action(150)
         
         
         # Sanitise the selected action to deal with edge cases 

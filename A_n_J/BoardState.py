@@ -224,7 +224,7 @@ class BoardState(object):
             
         safe = self.safe_pieces(colour)
         
-        return 4*(self_exits/opposing_exits) + 2*(material_weight/opposing_material) + 0.7*safe + self.wins(colour) 
+        return self.wins(colour) + 6*(self_exits/opposing_exits) + 2*(material_weight/opposing_material) + 0.5*safe 
 
     '''
     Checks if the current player has won the game, or if another player has won.
