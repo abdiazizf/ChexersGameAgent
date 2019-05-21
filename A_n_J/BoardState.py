@@ -13,28 +13,30 @@ class BoardState(object):
     
     player_colour: the colour of the pieces owned by the player
     piece_vectors: a vector of all piece positions on a board
-    actions: Instance of PossibleActions class containing the valid moves for 
+    board: an array representing the position of all pieces on the board
+    legal_moves: Instance of PossibleActions class containing the valid moves for 
              a given board state.
-    
+    score: A list representing the number of turns taken to reach the state, 
+           as well as the number of pieces that have exited the board for each player
     '''
-    
     
     def __init__(self, player_colour,piece_vector,score,board):
         self.player_colour = player_colour
         new_vector = piece_vector[:]
         self.piece_vectors = new_vector
         self.board = np.array(board)
-
         self.legal_moves = PossibleActions(self)
         self.legal_moves.generate_actions(player_colour,self.piece_vectors,self.board)
         self.score = score
         
         
     '''
-    Takes an action and player colour as input, returns a new piece vector that
-    represents the move taken by that player 
+    Takes an action, colour and board as input. Returns a new piece vector that
+    represents the move taken by that player and updates the board to reflect it
     '''
     def update_piece_positions(self,colour,action,board):
+        
+
         new_vector = [row[:] for row in self.piece_vectors]
 
         if(action.type == "PASS"):
@@ -47,28 +49,27 @@ class BoardState(object):
             #Check if another player was captured
             neighbour = action.get_neighbour_space()
             other_player = self.board[neighbour]
-    
+            # If player was captured, convert their piece to the appropriate colour
             if board[neighbour] != 0 and board[neighbour] != colour:
                 new_vector[other_player].remove(neighbour)
                 new_vector[colour].append(neighbour)
                 board[neighbour] = colour
         
+        # Update new piece position in the vector
         new_vector[colour].remove(action.origin)
         new_vector[colour].append(action.destination)
         
+        # Update the board 
         board[action.origin] = 0
         board[action.destination] = colour
         
         return new_vector
         
+    '''
+    Called during the update function of the Player class. Creates a new state 
+    based on the new information and returns it. 
+    '''
     def update_game_state(self,action,colour,score,board):
-        
-        # Needs to 
-        # Reconfigure piece positions 
-        #Change board entries
-        # add to score
-        # change turn order
-        # return the new state 
         
         new_piece_vector = self.update_piece_positions(colour, action, self.board)
         next_player = self.player_turn_order()
@@ -77,7 +78,9 @@ class BoardState(object):
 
         return BoardState(next_player,new_piece_vector,new_score,new_board)
         
-    
+    '''
+    Create a new state based on an action 
+    '''
     def generate_successor(self,action):
 
         new_board = np.array(self.board)
@@ -93,7 +96,11 @@ class BoardState(object):
 
         
         return new_state
-    
+
+    '''
+    Update the piece vectors and board in the current state without returning a
+    new vector. 
+    '''
     def do_update(self,colour,action,board):
         new_vector = self.piece_vectors
         if(action.type == "PASS"):
@@ -117,7 +124,10 @@ class BoardState(object):
         board[action.origin] = 0
         board[action.destination] = colour
     
-    
+    '''
+    Perform a move on the current state by modifying its attributes. Does not 
+    return a new BoardState object or copy any of its attributes.
+    '''
     def do_move(self,action):
         self.do_update(self.player_colour, action, self.board)
         if(action.type == "EXIT"):
@@ -128,7 +138,9 @@ class BoardState(object):
         self.legal_moves.generate_actions(self.player_colour, self.piece_vectors, self.board)
     
     
-    
+    '''
+    Determines the next player's turn based on the current state
+    '''
     def player_turn_order(self):
         if (self.player_colour == 1):
             return 2
@@ -136,7 +148,10 @@ class BoardState(object):
             return 3
         else:
             return 1
-    
+    '''
+    Debug function used to discover discrepancies between the board 
+    and the location of the pieces stores in the piece vector.
+    '''
     def validate_board(self):
         p = 0
         for player in self.piece_vectors:
@@ -147,12 +162,20 @@ class BoardState(object):
                     print("INVALID BOARD",piece,p)
                     return False
             p += 1 
+            
+    '''
+    Copy the current score
+    '''
     def copy_score(self):
-
         return self.score[:]
     
+    '''
+    Determines if the current state is a terminal state for the game Chexers.
+    Returns true if the maximum number of turns has been reached for each player, 
+    or if any player exits four pieces from the board. 
+    '''
     def is_terminal_state(self):
-        if self.score[0] == 60:
+        if self.score[0] == 756:
             return True
         if self.score[1] == 4:
             return True
@@ -162,6 +185,10 @@ class BoardState(object):
             return True 
         return False
             
+    '''
+    Based on the current state estimates the current winner given a non terminal
+    state, or returns the true winner given a terminal state
+    '''
     def get_winner(self):
         winner = None
         max = -9999
@@ -172,14 +199,16 @@ class BoardState(object):
                 max = temp_score
         return winner
     
+    '''
+    Evaluation heuristic used to estimate the predicted winner given a state. 
+    In practice is used to determine player advantage given a non terminal state.
+    '''
     def evaluation_function(self,colour):
-        # Evaluation function that returns a player colour
-        # material weight, num exits, win/draw/loss threatened pieces, pieces that can be taken 
 
         material_weight = len(self.piece_vectors[colour])
         
         if material_weight == 0:
-            material_weight = -100
+            material_weight = -10000
         
         opposing_material = np.count_nonzero(self.board)-material_weight
         if opposing_material == 0:
@@ -190,8 +219,11 @@ class BoardState(object):
             opposing_exits = 1
         
         
-        return (material_weight/opposing_material) + 10*(self_exits/opposing_exits) + self.wins(colour)
+        return 10*(material_weight/opposing_material) + (self_exits/10*opposing_exits) + self.wins(colour)
 
+    '''
+    Checks if the current player has won the game, or if another player has won.
+    '''
     def wins(self,colour):
         if self.score[colour] == 4:
             return 100
@@ -201,15 +233,4 @@ class BoardState(object):
                     if self.score[i] == 4:
                         return -100
             return 0
-        
-    
-    '''
-    Defines comparison of two board states
-    '''
-    def __eq__(self, other):
-        return all(self.piece_vectors == other.piece_vectors)
-    def __hash__(self):
-        return
-    def __str__(self):
-        return
     

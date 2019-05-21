@@ -6,22 +6,13 @@ Created on Apr 30, 2019
 
 class Action(object):
     '''
-    Represents an action taken in a game of chexers 
+    Represents an action taken in a game of Chexers 
     
     origin: The original location of a piece before the move
     destination: The hex where the piece will be after the move
     action_type: JUMP, MOVE or EXIT. The type of move made to reach the destination
     from the origin
     '''
-    
-    '''
-    Checks to see if a move will end on a valid hex on the game_board
-    '''
-    def on_board(self):
-        if(self.hex_distance(self.destination, (0,0) ) > 3):
-            return False
-        else: 
-            return True
         
     '''
     Formats an actions attributes into the desired output for the simulation
@@ -32,49 +23,35 @@ class Action(object):
     def format_output(self):
         return (self.type, ((self.origin), (self.destination)))
     
+    '''
+    Formats an exit action to the desired output used by the referee
+    Eg. ( EXIT, (0,0) )
+    '''
     def format_exit(self):
         return (self.type, (self.origin))
        
     
     def __init__(self, origin, direction, action_type):
-        '''
-        Constructor
-        '''
         self.origin = origin
         self.destination = (origin[0] + direction[0],origin[1] + direction[1])
         self.type = action_type
-        #if action_type == "JUMP":
-        #    self.dir = direction
-
-        
-        
+  
+    '''
+    Calculate the direction of an action given its origin and destination 
+    '''
     def get_direction(self):
         return (self.destination[0] - self.origin[0],self.destination[1] - self.origin[1])
         
+    ''' 
+    Calculates the location of the neighbouring space given the actions destination 
+    '''
     def get_neighbour_space(self):
         direction = self.get_direction()
         return ( (self.origin[0]) + int((direction[0]/2)) , (self.origin[1]) + int((direction[1]/2)) )
-    '''
-    Returns true if both numbers share the same sign, ie + or - 
-    '''
-    def same_sign(self, q , r) :
-        return (q < 0 and r < 0)or (q>=0 and r>= 0)
-    
-    '''
-    Takes two tuples as input and returns the distance between them in 
-    number of hexes
-    '''
-    def hex_distance(self, origin, goal):
 
-        distance_x = goal[0] - origin[0]
-        distance_y = goal[1] - origin[1]
-        if self.same_sign(distance_x, distance_y):
-            return abs(distance_x + distance_y)
-        else:
-            return max(abs(distance_x), abs(distance_y))
-    
-        return
-    
+    '''
+    Compares the equality of two actions 
+    '''
     def compare_to(self, other):
         
         if self.origin != other.origin:
