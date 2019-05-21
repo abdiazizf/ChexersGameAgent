@@ -222,8 +222,6 @@ class BoardState(object):
         if opposing_exits == 0:
             opposing_exits = 0.01
             
-        mobility = len(self.legal_moves.actions)
-            
         safe = self.safe_pieces(colour)
         
         return 4*(self_exits/opposing_exits) + 2*(material_weight/opposing_material) + 0.7*safe + self.wins(colour) 
